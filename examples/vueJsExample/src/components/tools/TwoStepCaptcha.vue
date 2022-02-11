@@ -92,8 +92,8 @@ export default {
 </script>
 <style lang="less" scoped>
 .step-form-wrapper {
-  margin: 0 auto;
   width: 80%;
   max-width: 400px;
+  margin: 0 auto;
 }
 </style>

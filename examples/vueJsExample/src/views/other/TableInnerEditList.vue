@@ -258,8 +258,8 @@ export default {
 }
 
 .fold {
-  width: calc(100% - 216px);
   display: inline-block;
+  width: calc(100% - 216px);
 }
 
 .operator {

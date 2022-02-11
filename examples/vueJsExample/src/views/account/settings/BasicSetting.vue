@@ -74,15 +74,15 @@ export default {
 
 <style lang="less" scoped>
 .avatar-upload-wrapper {
-  height: 200px;
   width: 100%;
+  height: 200px;
 }
 
 .ant-upload-preview {
   position: relative;
-  margin: 0 auto;
   width: 100%;
   max-width: 180px;
+  margin: 0 auto;
   border-radius: 50%;
   box-shadow: 0 0 4px #ccc;
 
@@ -90,17 +90,17 @@ export default {
     position: absolute;
     top: 0;
     right: 10px;
-    font-size: 1.4rem;
     padding: 0.5rem;
+    font-size: 1.4rem;
     background: rgba(222, 221, 221, 0.7);
-    border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
   }
   .mask {
-    opacity: 0;
     position: absolute;
     background: rgba(0, 0, 0, 0.4);
     cursor: pointer;
+    opacity: 0;
     transition: opacity 0.4s;
 
     &:hover {
@@ -108,13 +108,13 @@ export default {
     }
 
     i {
-      font-size: 2rem;
       position: absolute;
       top: 50%;
       left: 50%;
-      margin-left: -1rem;
       margin-top: -1rem;
+      margin-left: -1rem;
       color: #d6d6d6;
+      font-size: 2rem;
     }
   }
 
@@ -123,8 +123,8 @@ export default {
     width: 100%;
     max-width: 180px;
     height: 100%;
-    border-radius: 50%;
     overflow: hidden;
+    border-radius: 50%;
   }
 }
 </style>

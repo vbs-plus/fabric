@@ -317,8 +317,8 @@ export default {
     display: flex;
 
     .setting-drawer-index-item {
-      margin-right: 16px;
       position: relative;
+      margin-right: 16px;
       border-radius: 4px;
       cursor: pointer;
 
@@ -331,27 +331,27 @@ export default {
         top: 0;
         right: 0;
         width: 100%;
+        height: 100%;
         padding-top: 15px;
         padding-left: 24px;
-        height: 100%;
         color: #1890ff;
-        font-size: 14px;
         font-weight: 700;
+        font-size: 14px;
       }
     }
   }
   .setting-drawer-theme-color-colorBlock {
+    float: left;
     width: 20px;
     height: 20px;
-    border-radius: 2px;
-    float: left;
-    cursor: pointer;
     margin-right: 8px;
-    padding-left: 0px;
     padding-right: 0px;
-    text-align: center;
+    padding-left: 0px;
     color: #fff;
     font-weight: 700;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
 
     i {
       font-size: 14px;
@@ -362,19 +362,19 @@ export default {
 .setting-drawer-index-handle {
   position: absolute;
   top: 240px;
-  background: #1890ff;
+  right: 300px;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 48px;
   height: 48px;
-  right: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 16px;
+  text-align: center;
+  background: #1890ff;
+  border-radius: 4px 0 0 4px;
   cursor: pointer;
   pointer-events: auto;
-  z-index: 1001;
-  text-align: center;
-  font-size: 16px;
-  border-radius: 4px 0 0 4px;
 
   i {
     color: rgb(255, 255, 255);

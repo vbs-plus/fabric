@@ -172,12 +172,12 @@ export default {
 .avatar-upload-preview {
   position: absolute;
   top: 50%;
-  transform: translate(50%, -50%);
   width: 180px;
   height: 180px;
+  overflow: hidden;
   border-radius: 50%;
   box-shadow: 0 0 4px #ccc;
-  overflow: hidden;
+  transform: translate(50%, -50%);
 
   img {
     width: 100%;

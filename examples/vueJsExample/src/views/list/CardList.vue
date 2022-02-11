@@ -103,14 +103,13 @@ export default {
 
   /deep/ .meta-content {
     position: relative;
-    overflow: hidden;
-    text-overflow: ellipsis;
     display: -webkit-box;
     height: 64px;
+    margin-bottom: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-
-    margin-bottom: 1em;
   }
 }
 
@@ -125,20 +124,20 @@ export default {
 
   li {
     float: left;
-    text-align: center;
+    width: 50%;
     margin: 12px 0;
     color: rgba(0, 0, 0, 0.45);
-    width: 50%;
+    text-align: center;
 
     &:not(:last-child) {
       border-right: 1px solid #e8e8e8;
     }
 
     a {
-      color: rgba(0, 0, 0, 0.45);
-      line-height: 22px;
       display: inline-block;
       width: 100%;
+      color: rgba(0, 0, 0, 0.45);
+      line-height: 22px;
       &:hover {
         color: @primary-color;
       }
@@ -147,9 +146,9 @@ export default {
 }
 
 .new-btn {
-  background-color: #fff;
-  border-radius: 2px;
   width: 100%;
   height: 188px;
+  background-color: #fff;
+  border-radius: 2px;
 }
 </style>

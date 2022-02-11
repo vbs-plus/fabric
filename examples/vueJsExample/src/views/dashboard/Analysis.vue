@@ -427,8 +427,8 @@ export default {
 
 <style lang="less" scoped>
 .extra-wrapper {
-  line-height: 55px;
   padding-right: 24px;
+  line-height: 55px;
 
   .extra-item {
     display: inline-block;
@@ -458,9 +458,9 @@ export default {
   i {
     margin-left: 16px;
     color: rgba(0, 0, 0, 0.45);
+    color: black;
     cursor: pointer;
     transition: color 0.32s;
-    color: black;
   }
 }
 .analysis-salesTypeRadio {

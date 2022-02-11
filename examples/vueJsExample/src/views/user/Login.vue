@@ -356,21 +356,21 @@ export default {
   }
 
   button.login-button {
+    width: 100%;
+    height: 40px;
     padding: 0 15px;
     font-size: 16px;
-    height: 40px;
-    width: 100%;
   }
 
   .user-login-other {
-    text-align: left;
     margin-top: 24px;
     line-height: 22px;
+    text-align: left;
 
     .item-icon {
-      font-size: 24px;
-      color: rgba(0, 0, 0, 0.2);
       margin-left: 16px;
+      color: rgba(0, 0, 0, 0.2);
+      font-size: 24px;
       vertical-align: middle;
       cursor: pointer;
       transition: color 0.3s;

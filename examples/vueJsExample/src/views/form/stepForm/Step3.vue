@@ -61,9 +61,9 @@ export default {
   }
 }
 .money {
-  font-family: 'Helvetica Neue', sans-serif;
   font-weight: 500;
   font-size: 20px;
+  font-family: 'Helvetica Neue', sans-serif;
   line-height: 14px;
 }
 </style>

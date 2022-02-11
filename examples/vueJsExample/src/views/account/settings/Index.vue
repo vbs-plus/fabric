@@ -112,8 +112,8 @@ export default {
 
 <style lang="less" scoped>
 .account-settings-info-main {
-  width: 100%;
   display: flex;
+  width: 100%;
   height: 100%;
   overflow: auto;
 
@@ -121,12 +121,12 @@ export default {
     display: block;
 
     .account-settings-info-left {
-      border-right: unset;
-      border-bottom: 1px solid #e8e8e8;
       width: 100%;
       height: 50px;
       overflow-x: auto;
       overflow-y: scroll;
+      border-right: unset;
+      border-bottom: 1px solid #e8e8e8;
     }
     .account-settings-info-right {
       padding: 20px 40px;
@@ -134,8 +134,8 @@ export default {
   }
 
   .account-settings-info-left {
-    border-right: 1px solid #e8e8e8;
     width: 224px;
+    border-right: 1px solid #e8e8e8;
   }
 
   .account-settings-info-right {
@@ -143,11 +143,11 @@ export default {
     padding: 8px 40px;
 
     .account-settings-info-title {
-      color: rgba(0, 0, 0, 0.85);
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 28px;
       margin-bottom: 12px;
+      color: rgba(0, 0, 0, 0.85);
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 28px;
     }
     .account-settings-info-view {
       padding-top: 12px;

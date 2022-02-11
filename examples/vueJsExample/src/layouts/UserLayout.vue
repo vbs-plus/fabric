@@ -58,19 +58,20 @@ export default {
   &.mobile {
     .container {
       .main {
-        max-width: 368px;
         width: 98%;
+        max-width: 368px;
       }
     }
   }
 
   .container {
     width: 100%;
+    min-he
+    position: relative;
+    width: 100%;
     min-height: 100%;
     background: #f0f2f5 url(~@/assets/background.svg) no-repeat 50%;
     background-size: 100%;
-    //padding: 50px 0 84px;
-    position: relative;
 
     .user-layout-lang {
       width: 100%;
@@ -79,14 +80,14 @@ export default {
       text-align: right;
 
       .select-lang-trigger {
-        cursor: pointer;
-        padding: 12px;
-        margin-right: 24px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        margin-right: 24px;
+        padding: 12px;
         font-size: 18px;
         vertical-align: middle;
+        cursor: pointer;
       }
     }
 
@@ -103,49 +104,49 @@ export default {
           .badge {
             position: absolute;
             display: inline-block;
+            margin-top: -10px;
+            margin-left: -12px;
             line-height: 1;
             vertical-align: middle;
-            margin-left: -12px;
-            margin-top: -10px;
             opacity: 0.8;
           }
 
           .logo {
             height: 44px;
-            vertical-align: top;
             margin-right: 16px;
+            vertical-align: top;
             border-style: none;
           }
 
           .title {
-            font-size: 33px;
-            color: rgba(0, 0, 0, 0.85);
-            font-family: Avenir, 'Helvetica Neue', Arial, Helvetica, sans-serif;
-            font-weight: 600;
             position: relative;
             top: 2px;
+            color: rgba(0, 0, 0, 0.85);
+            font-weight: 600;
+            font-size: 33px;
+            font-family: Avenir, 'Helvetica Neue', Arial, Helvetica, sans-serif;
           }
         }
         .desc {
-          font-size: 14px;
-          color: rgba(0, 0, 0, 0.45);
           margin-top: 12px;
           margin-bottom: 40px;
+          color: rgba(0, 0, 0, 0.45);
+          font-size: 14px;
         }
       }
 
       .main {
-        min-width: 260px;
         width: 368px;
+        min-width: 260px;
         margin: 0 auto;
       }
 
       .footer {
-        // position: absolute;
+        bottom: 0; te;
+        width: 100
         width: 100%;
-        bottom: 0;
-        padding: 0 16px;
         margin: 48px 0 24px;
+        padding: 0 16px;
         text-align: center;
 
         .links {

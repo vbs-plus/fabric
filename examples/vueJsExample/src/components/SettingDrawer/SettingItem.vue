@@ -27,10 +27,10 @@ export default {
   margin-bottom: 24px;
 
   .setting-drawer-index-title {
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.85);
-    line-height: 22px;
     margin-bottom: 12px;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    line-height: 22px;
   }
 }
 </style>

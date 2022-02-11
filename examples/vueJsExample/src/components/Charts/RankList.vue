@@ -46,20 +46,20 @@ export default {
         line-height: 22px;
 
         &:first-child {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          margin-right: 24px;
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 20px;
+          text-align: center;
           background-color: #f5f5f5;
           border-radius: 20px;
-          display: inline-block;
-          font-size: 12px;
-          font-weight: 600;
-          margin-right: 24px;
-          height: 20px;
-          line-height: 20px;
-          width: 20px;
-          text-align: center;
         }
         &.active {
-          background-color: #314659;
           color: #fff;
+          background-color: #314659;
         }
         &:last-child {
           float: right;

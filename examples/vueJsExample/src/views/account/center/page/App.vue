@@ -79,25 +79,25 @@ export default {
 <style lang="less" scoped>
 .app-list {
   .meta-cardInfo {
-    zoom: 1;
     margin-top: 16px;
+    zoom: 1;
 
     > div {
       position: relative;
-      text-align: left;
       float: left;
       width: 50%;
+      text-align: left;
 
       p {
-        line-height: 32px;
-        font-size: 24px;
         margin: 0;
+        font-size: 24px;
+        line-height: 32px;
 
         &:first-child {
+          margin-bottom: 4px;
           color: rgba(0, 0, 0, 0.45);
           font-size: 12px;
           line-height: 20px;
-          margin-bottom: 4px;
         }
       }
     }

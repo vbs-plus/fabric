@@ -322,10 +322,10 @@ export default {
   }
 }
 .antd-pro-pages-forms-style-errorIcon {
-  user-select: none;
   margin-right: 24px;
   color: #f5222d;
   cursor: pointer;
+  user-select: none;
   i {
     margin-right: 4px;
   }

@@ -210,11 +210,11 @@ export default {
 }
 
 .list-content-item {
-  color: rgba(0, 0, 0, 0.45);
   display: inline-block;
-  vertical-align: middle;
-  font-size: 14px;
   margin-left: 40px;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 14px;
+  vertical-align: middle;
   span {
     line-height: 20px;
   }

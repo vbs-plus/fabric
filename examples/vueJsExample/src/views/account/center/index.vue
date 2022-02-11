@@ -190,44 +190,44 @@ export default {
   transition: 0.3s;
 
   .account-center-avatarHolder {
-    text-align: center;
     margin-bottom: 24px;
+    text-align: center;
 
     & > .avatar {
-      margin: 0 auto;
       width: 104px;
       height: 104px;
+      margin: 0 auto;
       margin-bottom: 20px;
-      border-radius: 50%;
       overflow: hidden;
+      border-radius: 50%;
       img {
-        height: 100%;
         width: 100%;
+        height: 100%;
       }
     }
 
     .username {
+      margin-bottom: 4px;
       color: rgba(0, 0, 0, 0.85);
+      font-weight: 500;
       font-size: 20px;
       line-height: 28px;
-      font-weight: 500;
-      margin-bottom: 4px;
     }
   }
 
   .account-center-detail {
     p {
+      position: relative;
       margin-bottom: 8px;
       padding-left: 26px;
-      position: relative;
     }
 
     i {
       position: absolute;
-      height: 14px;
-      width: 14px;
-      left: 0;
       top: 4px;
+      left: 0;
+      width: 14px;
+      height: 14px;
       background: url(https://gw.alipayobjects.com/zos/rmsportal/pBjWzVAHnOOtAUvZmZfy.svg);
     }
 
@@ -252,18 +252,18 @@ export default {
     .members {
       a {
         display: block;
+        height: 24px;
         margin: 12px 0;
         line-height: 24px;
-        height: 24px;
         .member {
-          font-size: 14px;
-          color: rgba(0, 0, 0, 0.65);
-          line-height: 24px;
-          max-width: 100px;
-          vertical-align: top;
-          margin-left: 12px;
-          transition: all 0.3s;
           display: inline-block;
+          max-width: 100px;
+          margin-left: 12px;
+          color: rgba(0, 0, 0, 0.65);
+          font-size: 14px;
+          line-height: 24px;
+          vertical-align: top;
+          transition: all 0.3s;
         }
         &:hover {
           span {
@@ -276,9 +276,9 @@ export default {
 
   .tagsTitle,
   .teamTitle {
-    font-weight: 500;
-    color: rgba(0, 0, 0, 0.85);
     margin-bottom: 12px;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
   }
 }
 </style>

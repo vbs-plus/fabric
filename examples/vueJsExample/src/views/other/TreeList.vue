@@ -167,14 +167,14 @@ export default {
   }
 
   /deep/ .btn {
-    display: none;
     position: absolute;
     top: 0;
     right: 10px;
+    z-index: 1050;
+    display: none;
     width: 20px;
     height: 40px;
     line-height: 40px;
-    z-index: 1050;
 
     &:hover {
       transform: scale(1.2);

@@ -39,9 +39,9 @@ export default {
 
 <style lang="less" scoped>
 .chart-mini-progress {
-  padding: 5px 0;
   position: relative;
   width: 100%;
+  padding: 5px 0;
 
   .target {
     position: absolute;
@@ -49,12 +49,12 @@ export default {
     bottom: 0;
 
     span {
-      border-radius: 100px;
       position: absolute;
       top: 0;
       left: 0;
-      height: 4px;
       width: 2px;
+      height: 4px;
+      border-radius: 100px;
 
       &:last-child {
         top: auto;
@@ -63,15 +63,15 @@ export default {
     }
   }
   .progress-wrapper {
-    background-color: #f5f5f5;
     position: relative;
+    background-color: #f5f5f5;
 
     .progress {
-      transition: all 0.4s cubic-bezier(0.08, 0.82, 0.17, 1) 0s;
-      border-radius: 1px 0 0 1px;
-      background-color: #1890ff;
       width: 0;
       height: 100%;
+      background-color: #1890ff;
+      border-radius: 1px 0 0 1px;
+      transition: all 0.4s cubic-bezier(0.08, 0.82, 0.17, 1) 0s;
     }
   }
 }

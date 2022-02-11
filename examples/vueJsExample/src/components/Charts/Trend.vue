@@ -65,9 +65,9 @@ export default {
 
     &.up,
     &.down {
-      margin-left: 4px;
       position: relative;
       top: 1px;
+      margin-left: 4px;
 
       i {
         font-size: 12px;
@@ -79,8 +79,8 @@ export default {
       color: #f5222d;
     }
     &.down {
-      color: #52c41a;
       top: -1px;
+      color: #52c41a;
     }
   }
 }

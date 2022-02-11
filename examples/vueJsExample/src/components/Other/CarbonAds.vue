@@ -57,12 +57,12 @@ export default {
 <style lang="less" scoped>
 .business-pro-ad {
   position: fixed;
-  background: rgba(255, 255, 255, 0.25);
-  left: 0;
   bottom: 0;
-  padding: 0 12px;
-  height: 48px;
-  width: 258px;
+  left: 0;
   z-index: 99;
+  width: 258px;
+  height: 48px;
+  padding: 0 12px;
+  background: rgba(255, 255, 255, 0.25);
 }
 </style>

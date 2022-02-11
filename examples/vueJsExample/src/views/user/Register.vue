@@ -359,8 +359,8 @@ export default {
 <style lang="less" scoped>
 .user-layout-register {
   & > h3 {
-    font-size: 16px;
     margin-bottom: 20px;
+    font-size: 16px;
   }
 
   .getCaptcha {

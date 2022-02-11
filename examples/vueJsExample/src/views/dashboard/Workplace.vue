@@ -272,13 +272,13 @@ export default {
     font-size: 0;
 
     a {
-      color: rgba(0, 0, 0, 0.85);
-      margin-left: 12px;
-      line-height: 24px;
-      height: 24px;
       display: inline-block;
-      vertical-align: top;
+      height: 24px;
+      margin-left: 12px;
+      color: rgba(0, 0, 0, 0.85);
       font-size: 14px;
+      line-height: 24px;
+      vertical-align: top;
 
       &:hover {
         color: #1890ff;
@@ -287,24 +287,24 @@ export default {
   }
 
   .card-description {
-    color: rgba(0, 0, 0, 0.45);
     height: 44px;
-    line-height: 22px;
     overflow: hidden;
+    color: rgba(0, 0, 0, 0.45);
+    line-height: 22px;
   }
 
   .project-item {
     display: flex;
+    height: 20px;
     margin-top: 8px;
     overflow: hidden;
     font-size: 12px;
-    height: 20px;
     line-height: 20px;
 
     a {
-      color: rgba(0, 0, 0, 0.45);
       display: inline-block;
       flex: 1 1 0;
+      color: rgba(0, 0, 0, 0.45);
 
       &:hover {
         color: #1890ff;
@@ -312,17 +312,17 @@ export default {
     }
 
     .datetime {
-      color: rgba(0, 0, 0, 0.25);
       flex: 0 0 auto;
       float: right;
+      color: rgba(0, 0, 0, 0.25);
     }
   }
 
   .ant-card-meta-description {
-    color: rgba(0, 0, 0, 0.45);
     height: 44px;
-    line-height: 22px;
     overflow: hidden;
+    color: rgba(0, 0, 0, 0.45);
+    line-height: 22px;
   }
 }
 
@@ -331,30 +331,30 @@ export default {
   font-size: 0;
 
   a {
-    color: rgba(0, 0, 0, 0.65);
     display: inline-block;
-    font-size: 14px;
-    margin-bottom: 13px;
     width: 25%;
+    margin-bottom: 13px;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
   }
 }
 
 .members {
   a {
     display: block;
+    height: 24px;
     margin: 12px 0;
     line-height: 24px;
-    height: 24px;
 
     .member {
-      font-size: 14px;
-      color: rgba(0, 0, 0, 0.65);
-      line-height: 24px;
-      max-width: 100px;
-      vertical-align: top;
-      margin-left: 12px;
-      transition: all 0.3s;
       display: inline-block;
+      max-width: 100px;
+      margin-left: 12px;
+      color: rgba(0, 0, 0, 0.65);
+      font-size: 14px;
+      line-height: 24px;
+      vertical-align: top;
+      transition: all 0.3s;
     }
 
     &:hover {
@@ -373,9 +373,9 @@ export default {
   }
 
   .more-info {
-    border: 0;
-    padding-top: 16px;
     margin: 16px 0 16px;
+    padding-top: 16px;
+    border: 0;
   }
 
   .headerContent .title .welcome-text {

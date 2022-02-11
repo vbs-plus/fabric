@@ -71,7 +71,7 @@ export default {
 
 <style lang="less" scoped>
 .ant-pro-page-header-search {
-  text-align: center;
   margin-bottom: 16px;
+  text-align: center;
 }
 </style>

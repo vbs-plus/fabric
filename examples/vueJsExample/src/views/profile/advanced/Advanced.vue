@@ -349,15 +349,15 @@ export default {
 
 .no-data {
   color: rgba(0, 0, 0, 0.25);
-  text-align: center;
-  line-height: 64px;
   font-size: 16px;
+  line-height: 64px;
+  text-align: center;
 
   i {
-    font-size: 24px;
-    margin-right: 16px;
     position: relative;
     top: 3px;
+    margin-right: 16px;
+    font-size: 24px;
   }
 }
 

@@ -71,23 +71,24 @@ export default {
 @import '../index.less';
 
 ul {
-  list-style: none;
+  height: 250px;
   padding: 0;
   overflow-y: scroll;
-  height: 250px;
+  list-style: none;
 
   li {
     display: inline-block;
-    padding: @padding-sm;
     margin: 3px 0;
+    padding: @padding-sm;
     border-radius: @border-radius-base;
 
     &:hover,
     &.active {
-      // box-shadow: 0px 0px 5px 2px @primary-color;
-      cursor: pointer;
       color: @white;
-      background-color: @primary-color;
+      background-color: @primary-color; pointer;
+      color: @white;
+      background
+      cursor: pointer;
     }
   }
 }

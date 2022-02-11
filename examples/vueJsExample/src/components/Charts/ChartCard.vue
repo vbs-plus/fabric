@@ -54,13 +54,13 @@ export default {
 <style lang="less" scoped>
 .chart-card-header {
   position: relative;
-  overflow: hidden;
   width: 100%;
+  overflow: hidden;
 
   .meta {
     position: relative;
-    overflow: hidden;
     width: 100%;
+    overflow: hidden;
     color: rgba(0, 0, 0, 0.45);
     font-size: 14px;
     line-height: 22px;
@@ -68,53 +68,53 @@ export default {
 }
 
 .chart-card-action {
-  cursor: pointer;
   position: absolute;
   top: 0;
   right: 0;
+  cursor: pointer;
 }
 
 .chart-card-footer {
-  border-top: 1px solid #e8e8e8;
-  padding-top: 9px;
   margin-top: 8px;
+  padding-top: 9px;
+  border-top: 1px solid #e8e8e8;
 
   > * {
     position: relative;
   }
 
   .field {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 
 .chart-card-content {
-  margin-bottom: 12px;
   position: relative;
-  height: 46px;
   width: 100%;
+  height: 46px;
+  margin-bottom: 12px;
 
   .content-fix {
     position: absolute;
-    left: 0;
     bottom: 0;
+    left: 0;
     width: 100%;
   }
 }
 
 .total {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  word-break: break-all;
-  white-space: nowrap;
-  color: #000;
+  height: 38px;
   margin-top: 4px;
   margin-bottom: 0;
+  overflow: hidden;
+  color: #000;
   font-size: 30px;
   line-height: 38px;
-  height: 38px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
 }
 </style>
