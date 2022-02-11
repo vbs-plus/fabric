@@ -1,0 +1,81 @@
+{
+  "name": "@vbs/fabric",
+  "version": "1.0.0",
+  "description": "A collection of configuration files containing prettier, eslint, stylelint",
+  "keywords": [
+    "vbs",
+    "vbs-plus",
+    "eslint",
+    "prettier",
+    "stylelint"
+  ],
+  "homepage": "https://github.com/vbs-plus/fabric#readme",
+  "bugs": {
+    "url": "https://github.com/vbs-plus/fabric/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vbs-plus/fabric"
+  },
+  "license": "ISC",
+  "author": "lzheng.zj@gmail.com",
+  "main": "dist/index.js",
+  "bin": {
+    "fabric": "./cli.js"
+  },
+  "files": [
+    "dist",
+    "cli.js"
+  ],
+  "scripts": {
+    "build": "tsc --build tsconfig.json && npm run copy-files",
+    "copy-files": "copyfiles -u 1 src/.prettierignore ./dist/",
+    "deps": "yarn upgrade-interactive --latest",
+    "lib": "cross-env TIMING=1 eslint lib",
+    "lint": "npm run build && cd tsExample && npm run lint",
+    "lint-js": "npm run build && cd jsExample && npm run lint",
+    "prepublishOnly": "npm run build && npm test && np --no-cleanup --yolo --no-publish --any-branch",
+    "prettier": "prettier -c --write \"**/*\"",
+    "test": "npm run testTS && npm run testJS",
+    "testJS": "npm run build && cd jsExample && npm run lint",
+    "testTS": "npm run build && cd tsExample && npm run lint"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-decorators": "^7.13.5",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "@babel/preset-typescript": "^7.12.7",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.9.0",
+    "chalk": "^5.0.0",
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-formatter-pretty": "^4.0.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-jest": "^26.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "eslint-plugin-unicorn": "^40.1.0",
+    "fast-glob": "^3.2.4",
+    "os-locale": "^6.0.2",
+    "prettier": "^2.3.2",
+    "prettier-plugin-two-style-order": "^1.0.0",
+    "stylelint": "^14.4.0",
+    "stylelint-config-css-modules": "^2.2.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.1.0",
+    "typescript": "^4.5.4",
+    "vue-eslint-parser": "^8.2.0"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "cross-env": "^7.0.3",
+    "np": "^7.6.0",
+    "rimraf": "^3.0.2"
+  }
+}
