@@ -58,11 +58,11 @@
       </span>
     </s-table>
 
-    <a-modal title="操作" :width="800" v-model="visible" @ok="handleOk">
+    <a-modal v-model="visible" title="操作" :width="800" @ok="handleOk">
       <a-form
         :autoFormCreate="
           (form) => {
-            this.form = form;
+            form = form;
           }
         "
       >
@@ -73,7 +73,7 @@
           hasFeedback
           validateStatus="success"
         >
-          <a-input placeholder="唯一识别码" v-model="mdl.id" id="no" disabled="disabled" />
+          <a-input id="no" v-model="mdl.id" placeholder="唯一识别码" disabled="disabled" />
         </a-form-item>
 
         <a-form-item
@@ -83,7 +83,7 @@
           hasFeedback
           validateStatus="success"
         >
-          <a-input placeholder="起一个名字" v-model="mdl.name" id="permission_name" />
+          <a-input id="permission_name" v-model="mdl.name" placeholder="起一个名字" />
         </a-form-item>
 
         <a-form-item
@@ -100,18 +100,18 @@
         </a-form-item>
 
         <a-form-item :labelCol="labelCol" :wrapperCol="wrapperCol" label="描述" hasFeedback>
-          <a-textarea :rows="5" v-model="mdl.describe" placeholder="..." id="describe" />
+          <a-textarea id="describe" v-model="mdl.describe" :rows="5" placeholder="..." />
         </a-form-item>
 
         <a-divider />
 
         <a-form-item :labelCol="labelCol" :wrapperCol="wrapperCol" label="赋予权限" hasFeedback>
-          <a-select style="width: 100%" mode="multiple" v-model="mdl.actions" :allowClear="true">
+          <a-select v-model="mdl.actions" style="width: 100%" mode="multiple" :allowClear="true">
             <a-select-option
               v-for="(action, index) in permissionList"
               :key="index"
               :value="action.value"
-              >{{ action.label }}</a-select-option
+            >{{ action.label }}</a-select-option
             >
           </a-select>
         </a-form-item>
@@ -127,6 +127,15 @@ export default {
   name: 'TableList',
   components: {
     STable,
+  },
+  filters: {
+    statusFilter(status) {
+      const statusMap = {
+        1: '正常',
+        2: '禁用',
+      };
+      return statusMap[status];
+    },
   },
   data() {
     return {
@@ -198,14 +207,19 @@ export default {
       selectedRows: [],
     };
   },
-  filters: {
-    statusFilter(status) {
-      const statusMap = {
-        1: '正常',
-        2: '禁用',
-      };
-      return statusMap[status];
-    },
+  watch: {
+    /*
+      'selectedRows': function (selectedRows) {
+        this.needTotalList = this.needTotalList.map(item => {
+          return {
+            ...item,
+            total: selectedRows.reduce( (sum, val) => {
+              return sum + val[item.dataIndex]
+            }, 0)
+          }
+        })
+      }
+      */
   },
   created() {
     this.loadPermissionList();
@@ -241,20 +255,6 @@ export default {
     toggleAdvanced() {
       this.advanced = !this.advanced;
     },
-  },
-  watch: {
-    /*
-      'selectedRows': function (selectedRows) {
-        this.needTotalList = this.needTotalList.map(item => {
-          return {
-            ...item,
-            total: selectedRows.reduce( (sum, val) => {
-              return sum + val[item.dataIndex]
-            }, 0)
-          }
-        })
-      }
-      */
   },
 };
 </script>

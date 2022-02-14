@@ -24,8 +24,8 @@
         :updateAt="item.updatedAt"
       />
     </a-list-item>
-    <div slot="footer" v-if="data.length > 0" style="text-align: center; margin-top: 16px">
-      <a-button @click="loadMore" :loading="loadingMore">加载更多</a-button>
+    <div v-if="data.length > 0" slot="footer" style="text-align: center; margin-top: 16px">
+      <a-button :loading="loadingMore" @click="loadMore">加载更多</a-button>
     </div>
   </a-list>
 </template>

@@ -48,17 +48,17 @@ export default {
     TagSelectOption,
     StandardFormRow,
   },
+  filters: {
+    fromNow(date) {
+      return moment(date).fromNow();
+    },
+  },
   data() {
     return {
       data: [],
       form: this.$form.createForm(this),
       loading: true,
     };
-  },
-  filters: {
-    fromNow(date) {
-      return moment(date).fromNow();
-    },
   },
   mounted() {
     this.getList();

@@ -87,8 +87,8 @@ export default {
       this.close();
     },
     changeScale(num) {
-      num = num || 1;
-      this.$refs.cropper.changeScale(num);
+      let _num = num || 1;
+      this.$refs.cropper.changeScale(_num);
     },
     rotateLeft() {
       this.$refs.cropper.rotateLeft();

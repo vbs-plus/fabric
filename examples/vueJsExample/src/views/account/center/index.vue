@@ -35,7 +35,7 @@
                   :key="tag"
                   :closable="index !== 0"
                   :close="() => handleTagClose(tag)"
-                  >{{ tag }}</a-tag
+                >{{ tag }}</a-tag
                 >
               </template>
               <a-input
@@ -49,7 +49,7 @@
                 @blur="handleTagInputConfirm"
                 @keyup.enter="handleTagInputConfirm"
               />
-              <a-tag v-else @click="showTagInput" style="background: #fff; borderstyle: dashed">
+              <a-tag v-else style="background: #fff; borderstyle: dashed" @click="showTagInput">
                 <a-icon type="plus" />New Tag
               </a-tag>
             </div>
@@ -61,7 +61,7 @@
             <a-spin :spinning="teamSpinning">
               <div class="members">
                 <a-row>
-                  <a-col :span="12" v-for="(item, index) in teams" :key="index">
+                  <a-col v-for="(item, index) in teams" :key="index" :span="12">
                     <a>
                       <a-avatar size="small" :src="item.avatar" />
                       <span class="member">{{ item.name }}</span>

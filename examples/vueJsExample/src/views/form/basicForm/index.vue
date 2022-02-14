@@ -2,7 +2,7 @@
   <!-- hidden PageHeaderWrapper title demo -->
   <page-header-wrapper :title="false" :content="$t('form.basic-form.basic.description')">
     <a-card :body-style="{ padding: '24px 32px' }" :bordered="false">
-      <a-form @submit="handleSubmit" :form="form">
+      <a-form :form="form" @submit="handleSubmit">
         <a-form-item
           :label="$t('form.basic-form.title.label')"
           :labelCol="{ lg: { span: 7 }, sm: { span: 7 } }"
@@ -23,12 +23,12 @@
           :wrapperCol="{ lg: { span: 10 }, sm: { span: 17 } }"
         >
           <a-range-picker
-            name="buildTime"
-            style="width: 100%"
             v-decorator="[
               'buildTime',
               { rules: [{ required: true, message: $t('form.basic-form.date.required') }] },
             ]"
+            name="buildTime"
+            style="width: 100%"
           />
         </a-form-item>
         <a-form-item
@@ -37,12 +37,12 @@
           :wrapperCol="{ lg: { span: 10 }, sm: { span: 17 } }"
         >
           <a-textarea
-            rows="4"
-            :placeholder="$t('form.basic-form.goal.placeholder')"
             v-decorator="[
               'description',
               { rules: [{ required: true, message: $t('form.basic-form.goal.required') }] },
             ]"
+            rows="4"
+            :placeholder="$t('form.basic-form.goal.placeholder')"
           />
         </a-form-item>
         <a-form-item
@@ -51,12 +51,12 @@
           :wrapperCol="{ lg: { span: 10 }, sm: { span: 17 } }"
         >
           <a-textarea
-            rows="4"
-            :placeholder="$t('form.basic-form.standard.placeholder')"
             v-decorator="[
               'type',
               { rules: [{ required: true, message: $t('form.basic-form.standard.required') }] },
             ]"
+            rows="4"
+            :placeholder="$t('form.basic-form.standard.placeholder')"
           />
         </a-form-item>
         <a-form-item
@@ -65,11 +65,11 @@
           :wrapperCol="{ lg: { span: 10 }, sm: { span: 17 } }"
         >
           <a-input
-            :placeholder="$t('form.basic-form.client.placeholder')"
             v-decorator="[
               'customer',
               { rules: [{ required: true, message: $t('form.basic-form.client.required') }] },
             ]"
+            :placeholder="$t('form.basic-form.client.placeholder')"
           />
         </a-form-item>
         <a-form-item

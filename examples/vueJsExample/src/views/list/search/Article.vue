@@ -24,10 +24,10 @@
             <a-col :md="24">
               <a-form-item :wrapper-col="{ span: 24 }">
                 <a-select
+                  v-decorator="['owner']"
                   style="max-width: 268px; width: 100%"
                   mode="multiple"
                   placeholder="选择 onwer"
-                  v-decorator="['owner']"
                   @change="handleChange"
                 >
                   <a-select-option v-for="item in owners" :key="item.id">{{
@@ -87,8 +87,8 @@
             :updateAt="item.updatedAt"
           />
         </a-list-item>
-        <div slot="footer" v-if="data.length > 0" style="text-align: center; margin-top: 16px">
-          <a-button @click="loadMore" :loading="loadingMore">加载更多</a-button>
+        <div v-if="data.length > 0" slot="footer" style="text-align: center; margin-top: 16px">
+          <a-button :loading="loadingMore" @click="loadMore">加载更多</a-button>
         </div>
       </a-list>
     </a-card>

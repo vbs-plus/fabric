@@ -3,9 +3,9 @@ import cloneDeep from 'lodash.clonedeep';
 export function convertRoutes(nodes) {
   if (!nodes) return null;
 
-  nodes = cloneDeep(nodes);
+  const _nodes = cloneDeep(nodes);
 
-  let queue = Array.isArray(nodes) ? nodes.concat() : [nodes];
+  let queue = Array.isArray(_nodes) ? _nodes.concat() : [_nodes];
 
   while (queue.length) {
     const levelSize = queue.length;
@@ -26,5 +26,5 @@ export function convertRoutes(nodes) {
     }
   }
 
-  return nodes;
+  return _nodes;
 }

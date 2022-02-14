@@ -1,8 +1,9 @@
 import Modal from 'ant-design-vue/es/modal';
+
 export default (Vue) => {
   function dialog(component, componentProps, modalProps) {
     const _vm = this;
-    modalProps = modalProps || {};
+    const _modalProps = modalProps || {};
     if (!_vm || !_vm._isVue) {
       return;
     }
@@ -62,15 +63,15 @@ export default (Vue) => {
       },
       render: function (h) {
         const that = this;
-        const modalModel = modalProps && modalProps.model;
+        const modalModel = _modalProps && _modalProps.model;
         if (modalModel) {
-          delete modalProps.model;
+          delete _modalProps.model;
         }
         const ModalProps = Object.assign({}, (modalModel && { model: modalModel }) || {}, {
           attrs: Object.assign(
             {},
             {
-              ...(modalProps.attrs || modalProps),
+              ...(_modalProps.attrs || _modalProps),
             },
             {
               visible: this.visible,
@@ -79,7 +80,7 @@ export default (Vue) => {
           on: Object.assign(
             {},
             {
-              ...(modalProps.on || modalProps),
+              ...(_modalProps.on || _modalProps),
             },
             {
               ok: () => {

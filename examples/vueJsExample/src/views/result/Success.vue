@@ -23,7 +23,7 @@
           </a-col>
           <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="12">
             <span style="color: rgba(0, 0, 0, 0.85)"
-              >{{ $t('result.success.operate-time') }}：</span
+            >{{ $t('result.success.operate-time') }}：</span
             >
             2016-12-12 ~ 2017-12-12
           </a-col>
@@ -34,9 +34,10 @@
           progressDot
         >
           <a-step :title="$t('result.success.step1-title')">
-            <span style="font-size: 14px" slot="title">{{ $t('result.success.step1-title') }}</span>
+            <span slot="title" style="font-size: 14px">{{ $t('result.success.step1-title') }}</span>
             <template slot="description">
               <div
+                slot="description"
                 style="
                   fontsize: 12px;
                   color: rgba(0, 0, 0, 0.45);
@@ -44,7 +45,6 @@
                   left: 42px;
                   text-align: left;
                 "
-                slot="description"
               >
                 <div style="margin: 8px 0 4px">
                   曲丽丽
@@ -55,9 +55,10 @@
             </template>
           </a-step>
           <a-step :title="$t('result.success.step2-title')">
-            <span style="font-size: 14px" slot="title">{{ $t('result.success.step2-title') }}</span>
+            <span slot="title" style="font-size: 14px">{{ $t('result.success.step2-title') }}</span>
             <template slot="description">
               <div
+                slot="description"
                 style="
                   fontsize: 12px;
                   color: rgba(0, 0, 0, 0.45);
@@ -65,7 +66,6 @@
                   left: 42px;
                   text-align: left;
                 "
-                slot="description"
               >
                 <div style="margin: 8px 0 4px">
                   周毛毛
@@ -76,10 +76,10 @@
             </template>
           </a-step>
           <a-step :title="$t('result.success.step3-title')">
-            <span style="font-size: 14px" slot="title">{{ $t('result.success.step3-title') }}</span>
+            <span slot="title" style="font-size: 14px">{{ $t('result.success.step3-title') }}</span>
           </a-step>
           <a-step :title="$t('result.success.step4-title')">
-            <span style="font-size: 14px" slot="title">{{ $t('result.success.step4-title') }}</span>
+            <span slot="title" style="font-size: 14px">{{ $t('result.success.step4-title') }}</span>
           </a-step>
         </a-steps>
       </div>

@@ -20,6 +20,9 @@ import Icon from 'ant-design-vue/es/icon';
 
 export default {
   name: 'NumberInfo',
+  components: {
+    Icon,
+  },
   props: {
     prefixCls: {
       type: String,
@@ -41,9 +44,6 @@ export default {
       type: String,
       default: 'up',
     },
-  },
-  components: {
-    Icon,
   },
   data() {
     return {};

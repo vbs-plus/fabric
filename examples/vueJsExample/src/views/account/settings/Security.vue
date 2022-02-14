@@ -1,6 +1,6 @@
 <template>
   <a-list itemLayout="horizontal" :dataSource="data">
-    <a-list-item slot="renderItem" slot-scope="item, index" :key="index">
+    <a-list-item slot="renderItem" :key="index" slot-scope="item, index">
       <a-list-item-meta>
         <a slot="title">{{ item.title }}</a>
         <span slot="description">

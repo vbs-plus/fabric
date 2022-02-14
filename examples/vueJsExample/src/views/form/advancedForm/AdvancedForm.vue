@@ -16,8 +16,8 @@
           slot-scope="text, record"
         >
           <a-input
-            :key="col"
             v-if="record.editable"
+            :key="col"
             style="margin: -5px 0"
             :value="text"
             :placeholder="columns[i].title"
@@ -54,7 +54,7 @@
         type="dashed"
         icon="plus"
         @click="newMember"
-        >新增成员</a-button
+      >新增成员</a-button
       >
     </a-card>
 
@@ -71,20 +71,20 @@
             <li
               v-for="item in errors"
               :key="item.key"
-              @click="scrollToField(item.key)"
               class="antd-pro-pages-forms-style-errorListItem"
+              @click="scrollToField(item.key)"
             >
               <a-icon type="cross-circle-o" class="antd-pro-pages-forms-style-errorIcon" />
               <div class="">{{ item.message }}</div>
               <div class="antd-pro-pages-forms-style-errorField">{{ item.fieldLabel }}</div>
             </li>
           </template>
-          <span class="antd-pro-pages-forms-style-errorIcon" v-if="errors.length > 0">
+          <span v-if="errors.length > 0" class="antd-pro-pages-forms-style-errorIcon">
             <a-icon type="exclamation-circle" />{{ errors.length }}
           </span>
         </a-popover>
       </span>
-      <a-button type="primary" @click="validate" :loading="loading">提交</a-button>
+      <a-button type="primary" :loading="loading" @click="validate">提交</a-button>
     </footer-tool-bar>
   </page-header-wrapper>
 </template>
@@ -112,12 +112,12 @@ const fieldLabels = {
 
 export default {
   name: 'AdvancedForm',
-  mixins: [baseMixin],
   components: {
     FooterToolBar,
     RepositoryForm,
     TaskForm,
   },
+  mixins: [baseMixin],
   data() {
     return {
       loading: false,

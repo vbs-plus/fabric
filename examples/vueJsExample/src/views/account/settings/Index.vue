@@ -90,6 +90,11 @@ export default {
       pageTitle: '',
     };
   },
+  watch: {
+    $route(val) {
+      this.updateMenu();
+    },
+  },
   mounted() {
     this.updateMenu();
   },
@@ -100,11 +105,6 @@ export default {
     updateMenu() {
       const routes = this.$route.matched.concat();
       this.selectedKeys = [routes.pop().path];
-    },
-  },
-  watch: {
-    $route(val) {
-      this.updateMenu();
     },
   },
 };

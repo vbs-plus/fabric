@@ -42,7 +42,6 @@ export default {
     },
   },
   render() {
-    // return <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-4801326429087140" data-ad-slot="6929057621" />
     return (
       <div class="business-pro-ad">
         <a href="https://store.antdv.com/pro/" target="_blank">

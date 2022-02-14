@@ -1,7 +1,7 @@
 <template>
   <div :class="prefixCls">
     <a-tabs v-model="currentTab" @change="handleTabChange">
-      <a-tab-pane v-for="v in icons" :tab="v.title" :key="v.key">
+      <a-tab-pane v-for="v in icons" :key="v.key" :tab="v.title">
         <ul>
           <li
             v-for="(icon, key) in v.icons"

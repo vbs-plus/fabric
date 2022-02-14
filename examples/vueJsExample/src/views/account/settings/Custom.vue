@@ -2,14 +2,14 @@
   <a-list itemLayout="horizontal">
     <a-list-item>
       <a-list-item-meta>
-        <template v-slot:title>
+        <template #title>
           <a>风格配色</a>
         </template>
-        <template v-slot:description>
+        <template #description>
           <span> 整体风格配色设置 </span>
         </template>
       </a-list-item-meta>
-      <template v-slot:actions>
+      <template #actions>
         <a-switch
           checkedChildren="暗色"
           unCheckedChildren="白色"
@@ -20,10 +20,10 @@
     </a-list-item>
     <a-list-item>
       <a-list-item-meta>
-        <template v-slot:title>
+        <template #title>
           <a>主题色</a>
         </template>
-        <template v-slot:description>
+        <template #description>
           <span>
             页面风格配色： <a>{{ colorFilter(primaryColor) }}</a>
           </span>
@@ -43,14 +43,14 @@ const themeMap = {
 };
 
 export default {
-  mixins: [baseMixin],
-  data() {
-    return {};
-  },
   filters: {
     themeFilter(theme) {
       return themeMap[theme];
     },
+  },
+  mixins: [baseMixin],
+  data() {
+    return {};
   },
   methods: {
     colorFilter(color) {

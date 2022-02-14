@@ -46,12 +46,12 @@
         class="stepFormText"
       >
         <a-input
-          type="password"
-          style="width: 80%"
           v-decorator="[
             'paymentPassword',
             { initialValue: '123456', rules: [{ required: true, message: '请输入支付密码' }] },
           ]"
+          type="password"
+          style="width: 80%"
         />
       </a-form-item>
       <a-form-item :wrapperCol="{ span: 19, offset: 5 }">
@@ -73,6 +73,9 @@ export default {
       loading: false,
       timer: 0,
     };
+  },
+  beforeDestroy() {
+    clearTimeout(this.timer);
   },
   methods: {
     nextStep() {
@@ -96,9 +99,6 @@ export default {
     prevStep() {
       this.$emit('prevStep');
     },
-  },
-  beforeDestroy() {
-    clearTimeout(this.timer);
   },
 };
 </script>

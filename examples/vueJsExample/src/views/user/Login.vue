@@ -2,8 +2,8 @@
   <div class="main">
     <a-form
       id="formLogin"
-      class="user-layout-login"
       ref="formLogin"
+      class="user-layout-login"
       :form="form"
       @submit="handleSubmit"
     >
@@ -22,9 +22,6 @@
           />
           <a-form-item>
             <a-input
-              size="large"
-              type="text"
-              :placeholder="$t('user.login.username.placeholder')"
               v-decorator="[
                 'username',
                 {
@@ -35,6 +32,9 @@
                   validateTrigger: 'change',
                 },
               ]"
+              size="large"
+              type="text"
+              :placeholder="$t('user.login.username.placeholder')"
             >
               <a-icon slot="prefix" type="user" :style="{ color: 'rgba(0,0,0,.25)' }" />
             </a-input>
@@ -42,8 +42,6 @@
 
           <a-form-item>
             <a-input-password
-              size="large"
-              :placeholder="$t('user.login.password.placeholder')"
               v-decorator="[
                 'password',
                 {
@@ -51,6 +49,8 @@
                   validateTrigger: 'blur',
                 },
               ]"
+              size="large"
+              :placeholder="$t('user.login.password.placeholder')"
             >
               <a-icon slot="prefix" type="lock" :style="{ color: 'rgba(0,0,0,.25)' }" />
             </a-input-password>
@@ -59,9 +59,6 @@
         <a-tab-pane key="tab2" :tab="$t('user.login.tab-login-mobile')">
           <a-form-item>
             <a-input
-              size="large"
-              type="text"
-              :placeholder="$t('user.login.mobile.placeholder')"
               v-decorator="[
                 'mobile',
                 {
@@ -75,6 +72,9 @@
                   validateTrigger: 'change',
                 },
               ]"
+              size="large"
+              type="text"
+              :placeholder="$t('user.login.mobile.placeholder')"
             >
               <a-icon slot="prefix" type="mobile" :style="{ color: 'rgba(0,0,0,.25)' }" />
             </a-input>
@@ -84,9 +84,6 @@
             <a-col class="gutter-row" :span="16">
               <a-form-item>
                 <a-input
-                  size="large"
-                  type="text"
-                  :placeholder="$t('user.login.mobile.verification-code.placeholder')"
                   v-decorator="[
                     'captcha',
                     {
@@ -94,6 +91,9 @@
                       validateTrigger: 'blur',
                     },
                   ]"
+                  size="large"
+                  type="text"
+                  :placeholder="$t('user.login.mobile.verification-code.placeholder')"
                 >
                   <a-icon slot="prefix" type="mail" :style="{ color: 'rgba(0,0,0,.25)' }" />
                 </a-input>
@@ -107,7 +107,7 @@
                 @click.stop.prevent="getCaptcha"
                 v-text="
                   (!state.smsSendBtn && $t('user.register.get-verification-code')) ||
-                  state.time + ' s'
+                    state.time + ' s'
                 "
               ></a-button>
             </a-col>
@@ -123,7 +123,7 @@
           :to="{ name: 'recover', params: { user: 'aaa' } }"
           class="forge-password"
           style="float: right"
-          >{{ $t('user.login.forgot-password') }}</router-link
+        >{{ $t('user.login.forgot-password') }}</router-link
         >
       </a-form-item>
 
@@ -135,7 +135,7 @@
           class="login-button"
           :loading="state.loginBtn"
           :disabled="state.loginBtn"
-          >{{ $t('user.login.login') }}</a-button
+        >{{ $t('user.login.login') }}</a-button
         >
       </a-form-item>
 

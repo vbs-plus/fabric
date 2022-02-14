@@ -5,7 +5,7 @@
     :tab-active-key="tabActiveKey"
     @tabChange="handleTabChange"
   >
-    <template v-slot:content>
+    <template #content>
       <a-descriptions size="small" :column="isMobile ? 1 : 2">
         <a-descriptions-item label="创建人">曲丽丽</a-descriptions-item>
         <a-descriptions-item label="订购产品">XX 服务</a-descriptions-item>
@@ -19,7 +19,7 @@
     </template>
 
     <!-- actions -->
-    <template v-slot:extra>
+    <template #extra>
       <a-button-group style="margin-right: 4px">
         <a-button>操作</a-button>
         <a-button>操作</a-button>
@@ -28,7 +28,7 @@
       <a-button type="primary">主操作</a-button>
     </template>
 
-    <template v-slot:extraContent>
+    <template #extraContent>
       <a-row class="status-list">
         <a-col :xs="12" :sm="12">
           <div class="text">状态</div>
@@ -44,10 +44,10 @@
     <a-card :bordered="false" title="流程进度">
       <a-steps :direction="(isMobile && 'vertical') || 'horizontal'" :current="1" progressDot>
         <a-step>
-          <template v-slot:title>
+          <template #title>
             <span>创建项目</span>
           </template>
-          <template v-slot:description>
+          <template #description>
             <div class="antd-pro-pages-profile-advanced-style-stepDescription">
               曲丽丽<a-icon type="dingding" style="margin-left: 8px" />
               <div>2016-12-12 12:32</div>
@@ -55,10 +55,10 @@
           </template>
         </a-step>
         <a-step>
-          <template v-slot:title>
+          <template #title>
             <span>部门初审</span>
           </template>
-          <template v-slot:description>
+          <template #description>
             <div class="antd-pro-pages-profile-advanced-style-stepDescription">
               周毛毛<a-icon type="dingding" style="color: rgb(0, 160, 233); margin-left: 8px" />
               <div><a>催一下</a></div>
@@ -77,7 +77,7 @@
         <a-descriptions-item label="身份证">3321944288191034921</a-descriptions-item>
         <a-descriptions-item label="联系方式">18112345678</a-descriptions-item>
         <a-descriptions-item label="联系地址"
-          >浙江省杭州市西湖区黄姑山路工专路交叉路口</a-descriptions-item
+        >浙江省杭州市西湖区黄姑山路工专路交叉路口</a-descriptions-item
         >
       </a-descriptions>
       <a-descriptions title="信息组">
@@ -95,7 +95,7 @@
           <a-descriptions-item label="所属部门">XX公司-YY部</a-descriptions-item>
           <a-descriptions-item label="过期时间">2018-08-08</a-descriptions-item>
           <a-descriptions-item label="描述"
-            >这段描述很长很长很长很长很长很长很长很长很长很长很长很长很长很长...</a-descriptions-item
+          >这段描述很长很长很长很长很长很长很长很长很长很长很长很长很长很长...</a-descriptions-item
           >
         </a-descriptions>
         <a-divider style="margin: 16px 0" />
@@ -125,7 +125,7 @@
       :activeTabKey="operationActiveTabKey"
       @tabChange="
         (key) => {
-          this.operationActiveTabKey = key;
+          operationActiveTabKey = key;
         }
       "
     >
@@ -168,6 +168,22 @@ import { baseMixin } from '@/store/app-mixin';
 
 export default {
   name: 'Advanced',
+  filters: {
+    statusFilter(status) {
+      const statusMap = {
+        agree: '成功',
+        reject: '驳回',
+      };
+      return statusMap[status];
+    },
+    statusTypeFilter(type) {
+      const statusTypeMap = {
+        agree: 'success',
+        reject: 'error',
+      };
+      return statusTypeMap[type];
+    },
+  },
   mixins: [baseMixin],
   data() {
     return {
@@ -308,22 +324,6 @@ export default {
         },
       ],
     };
-  },
-  filters: {
-    statusFilter(status) {
-      const statusMap = {
-        agree: '成功',
-        reject: '驳回',
-      };
-      return statusMap[status];
-    },
-    statusTypeFilter(type) {
-      const statusTypeMap = {
-        agree: 'success',
-        reject: 'error',
-      };
-      return statusTypeMap[type];
-    },
   },
   methods: {
     handleTabChange(key) {

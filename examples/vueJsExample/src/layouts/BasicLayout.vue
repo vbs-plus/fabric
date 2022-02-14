@@ -2,11 +2,11 @@
   <pro-layout
     :menus="menus"
     :collapsed="collapsed"
-    :mediaQuery="query"
-    :isMobile="isMobile"
-    :handleMediaQuery="handleMediaQuery"
-    :handleCollapse="handleCollapse"
-    :i18nRender="i18nRender"
+    :media-query="query"
+    :is-mobile="isMobile"
+    :handle-media-query="handleMediaQuery"
+    :handle-collapse="handleCollapse"
+    :i18n-render="i18nRender"
     v-bind="settings"
   >
     <!-- Ads begin
@@ -19,7 +19,7 @@
     <!-- 1.0.0+ 版本 pro-layout 提供 API，
           我们推荐使用这种方式进行 LOGO 和 title 自定义
     -->
-    <template v-slot:menuHeaderRender>
+    <template #menuHeaderRender>
       <div>
         <logo-svg />
         <h1>{{ title }}</h1>
@@ -28,7 +28,7 @@
     <!-- 1.0.0+ 版本 pro-layout 提供 API,
           增加 Header 左侧内容区自定义
     -->
-    <template v-slot:headerContentRender>
+    <template #headerContentRender>
       <div>
         <a-tooltip title="刷新页面">
           <a-icon
@@ -44,10 +44,16 @@
       </div>
     </template>
 
-    <setting-drawer v-if="isDev" :settings="settings" @change="handleSettingChange">
-      <div style="margin: 12px 0">This is SettingDrawer custom footer content.</div>
+    <setting-drawer
+      v-if="isDev"
+      :settings="settings"
+      @change="handleSettingChange"
+    >
+      <div style="margin: 12px 0">
+        This is SettingDrawer custom footer content.
+      </div>
     </setting-drawer>
-    <template v-slot:rightContentRender>
+    <template #rightContentRender>
       <right-content
         :top-menu="settings.layout === 'topmenu'"
         :is-mobile="isMobile"
@@ -55,7 +61,7 @@
       />
     </template>
     <!-- custom footer / 自定义Footer -->
-    <template v-slot:footerRender>
+    <template #footerRender>
       <global-footer />
     </template>
     <router-view />

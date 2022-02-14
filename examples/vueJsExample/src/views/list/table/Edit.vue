@@ -9,8 +9,8 @@
         validateStatus="success"
       >
         <a-input
-          placeholder="规则编号"
           v-decorator="['no', { rules: [{ required: true, message: '请输入规则编号' }] }]"
+          placeholder="规则编号"
           :disabled="true"
         ></a-input>
       </a-form-item>
@@ -23,9 +23,9 @@
         validateStatus="success"
       >
         <a-input-number
+          v-decorator="['callNo', { rules: [{ required: true }] }]"
           :min="1"
           style="width: 100%"
-          v-decorator="['callNo', { rules: [{ required: true }] }]"
         />
       </a-form-item>
 
@@ -56,9 +56,9 @@
         help="请填写一段描述"
       >
         <a-textarea
+          v-decorator="['description', { rules: [{ required: true }] }]"
           :rows="5"
           placeholder="..."
-          v-decorator="['description', { rules: [{ required: true }] }]"
         />
       </a-form-item>
 
@@ -70,11 +70,11 @@
         validateStatus="error"
       >
         <a-date-picker
+          v-decorator="['updatedAt']"
           style="width: 100%"
           showTime
           format="YYYY-MM-DD HH:mm:ss"
           placeholder="Select Time"
-          v-decorator="['updatedAt']"
         />
       </a-form-item>
 

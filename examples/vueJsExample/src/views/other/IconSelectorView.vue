@@ -29,7 +29,7 @@ export default {
       this.$message.info(
         <span>
           选中图标 <code>{icon}</code>
-        </span>,
+        </span>
       );
     },
     changeIcon(type) {

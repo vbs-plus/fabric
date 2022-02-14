@@ -4,12 +4,12 @@
     :tab-active-key="tabActiveKey"
     :tab-change="
       (key) => {
-        this.tabActiveKey = key;
+        tabActiveKey = key;
       }
     "
     content="段落示意：蚂蚁金服务设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态， 提供跨越设计与开发的体验解决方案。"
   >
-    <template v-slot:extraContent>
+    <template #extraContent>
       <div style="width: 155px; margin-top: -20px">
         <img style="width: 100%" :src="extraImage" />
       </div>
@@ -31,12 +31,14 @@
           <a-card :hoverable="true">
             <a-card-meta>
               <a slot="title">{{ item.title }}</a>
-              <a-avatar class="card-avatar" slot="avatar" :src="item.avatar" size="large" />
-              <div class="meta-content" slot="description">{{ item.content }}</div>
+              <a-avatar slot="avatar" class="card-avatar" :src="item.avatar" size="large" />
+              <div slot="description" class="meta-content">{{ item.content }}</div>
             </a-card-meta>
-            <template class="ant-card-actions" slot="actions">
-              <a>操作一</a>
-              <a>操作二</a>
+            <template slot="actions" >
+              <div class="ant-card-actions">
+                <a>操作一</a>
+                <a>操作二</a>
+              </div>
             </template>
           </a-card>
         </template>

@@ -1,6 +1,6 @@
 <template>
   <!-- 两步验证 -->
-  <a-modal centered v-model="visible" @cancel="handleCancel" :maskClosable="false">
+  <a-modal v-model="props.visible" centered :maskClosable="false" @cancel="handleCancel">
     <div slot="title" :style="{ textAlign: 'center' }">两步验证</div>
     <template slot="footer">
       <div :style="{ textAlign: 'center' }">
@@ -16,15 +16,15 @@
         layout="vertical"
         :auto-form-create="
           (form) => {
-            this.form = form;
+            form = form;
           }
         "
       >
         <div class="step-form-wrapper">
-          <p style="text-align: center" v-if="!stepLoading">
+          <p v-if="!stepLoading" style="text-align: center">
             请在手机中打开 Google Authenticator 或两步验证 APP<br />输入 6 位动态码
           </p>
-          <p style="text-align: center" v-else>正在验证..<br />请稍后</p>
+          <p v-else style="text-align: center">正在验证..<br />请稍后</p>
           <a-form-item
             :style="{ textAlign: 'center' }"
             hasFeedback
@@ -37,8 +37,8 @@
           >
             <a-input
               :style="{ textAlign: 'center' }"
-              @keyup.enter.native="handleStepOk"
               placeholder="000000"
+              @keyup.enter.native="handleStepOk"
             />
           </a-form-item>
           <p style="text-align: center">
@@ -83,7 +83,7 @@ export default {
       });
     },
     handleCancel() {
-      this.visible = false;
+      this.props.visible = false;
       this.$emit('cancel');
     },
     onForgeStepCode() {},

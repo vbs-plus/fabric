@@ -3,11 +3,11 @@
     <a-form :form="form" style="max-width: 500px; margin: 40px auto 0">
       <a-form-item label="付款账户" :labelCol="labelCol" :wrapperCol="wrapperCol">
         <a-select
-          placeholder="ant-design@alipay.com"
           v-decorator="[
             'paymentUser',
             { rules: [{ required: true, message: '付款账户必须填写' }] },
           ]"
+          placeholder="ant-design@alipay.com"
         >
           <a-select-option value="1">ant-design@alipay.com</a-select-option>
         </a-select>
@@ -19,7 +19,6 @@
             <a-select-option value="wexinpay">微信</a-select-option>
           </a-select>
           <a-input
-            :style="{ width: 'calc(100% - 100px)' }"
             v-decorator="[
               'payType',
               {
@@ -27,6 +26,7 @@
                 rules: [{ required: true, message: '收款账户必须填写' }],
               },
             ]"
+            :style="{ width: 'calc(100% - 100px)' }"
           />
         </a-input-group>
       </a-form-item>
@@ -40,11 +40,11 @@
       </a-form-item>
       <a-form-item label="转账金额" :labelCol="labelCol" :wrapperCol="wrapperCol">
         <a-input
-          prefix="￥"
           v-decorator="[
             'momey',
             { initialValue: '5000', rules: [{ required: true, message: '转账金额必须填写' }] },
           ]"
+          prefix="￥"
         />
       </a-form-item>
       <a-form-item :wrapperCol="{ span: 19, offset: 5 }">

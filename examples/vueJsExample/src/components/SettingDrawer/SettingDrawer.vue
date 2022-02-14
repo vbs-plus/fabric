@@ -3,11 +3,11 @@
     <a-drawer
       width="300"
       placement="right"
-      @close="onClose"
       :closable="false"
       :visible="visible"
       :drawer-style="{ position: 'absolute' }"
       style="position: absolute"
+      @close="onClose"
     >
       <div class="setting-drawer-index-content">
         <div :style="{ marginBottom: '24px' }">
@@ -21,7 +21,7 @@
                   src="https://gw.alipayobjects.com/zos/rmsportal/LCkqqYNmvBEbokSDscrm.svg"
                   alt="dark"
                 />
-                <div class="setting-drawer-index-selectIcon" v-if="navTheme === 'dark'">
+                <div v-if="navTheme === 'dark'" class="setting-drawer-index-selectIcon">
                   <a-icon type="check" />
                 </div>
               </div>
@@ -34,7 +34,7 @@
                   src="https://gw.alipayobjects.com/zos/rmsportal/jpRkZQMyYRryryPNtyIC.svg"
                   alt="light"
                 />
-                <div class="setting-drawer-index-selectIcon" v-if="navTheme !== 'dark'">
+                <div v-if="navTheme !== 'dark'" class="setting-drawer-index-selectIcon">
                   <a-icon type="check" />
                 </div>
               </div>
@@ -47,15 +47,15 @@
 
           <div style="height: 20px">
             <a-tooltip
-              class="setting-drawer-theme-color-colorBlock"
               v-for="(item, index) in colorList"
               :key="index"
+              class="setting-drawer-theme-color-colorBlock"
             >
               <template slot="title">
                 {{ item.key }}
               </template>
               <a-tag :color="item.color" @click="changeColor(item.color)">
-                <a-icon type="check" v-if="item.color === primaryColor"></a-icon>
+                <a-icon v-if="item.color === primaryColor" type="check"></a-icon>
               </a-tag>
             </a-tooltip>
           </div>
@@ -73,7 +73,7 @@
                   src="https://gw.alipayobjects.com/zos/rmsportal/JopDzEhOqwOjeNTXkoje.svg"
                   alt="sidemenu"
                 />
-                <div class="setting-drawer-index-selectIcon" v-if="layoutMode === 'sidemenu'">
+                <div v-if="layoutMode === 'sidemenu'" class="setting-drawer-index-selectIcon">
                   <a-icon type="check" />
                 </div>
               </div>
@@ -86,7 +86,7 @@
                   src="https://gw.alipayobjects.com/zos/rmsportal/KDNDBbriJhLwuqMoxcAr.svg"
                   alt="topmenu"
                 />
-                <div class="setting-drawer-index-selectIcon" v-if="layoutMode !== 'sidemenu'">
+                <div v-if="layoutMode !== 'sidemenu'" class="setting-drawer-index-selectIcon">
                   <a-icon type="check" />
                 </div>
               </div>
@@ -104,8 +104,10 @@
                     @change="handleContentWidthChange"
                   >
                     <a-select-option value="Fixed">固定</a-select-option>
-                    <a-select-option value="Fluid" v-if="layoutMode !== 'sidemenu'"
-                      >流式</a-select-option
+                    <a-select-option
+                      v-if="layoutMode !== 'sidemenu'"
+                      value="Fluid"
+                    >流式</a-select-option
                     >
                   </a-select>
                 </a-tooltip>
@@ -192,22 +194,22 @@
         </div>
         <a-divider />
         <div :style="{ marginBottom: '24px' }">
-          <a-button @click="doCopy" icon="copy" block>拷贝设置</a-button>
+          <a-button icon="copy" block @click="doCopy">拷贝设置</a-button>
           <a-alert type="warning" :style="{ marginTop: '24px' }">
             <span slot="message">
               配置栏只在开发环境用于预览，生产环境不会展现，请手动修改配置文件。修改配置文件后，需要清空本地缓存和LocalStorage
               <a
                 href="https://github.com/sendya/ant-design-pro-vue/blob/master/src/config/defaultSettings.js"
                 target="_blank"
-                >src/config/defaultSettings.js</a
+              >src/config/defaultSettings.js</a
               >
             </span>
           </a-alert>
         </div>
       </div>
-      <div class="setting-drawer-index-handle" @click="toggle" slot="handle">
-        <a-icon type="setting" v-if="!visible" />
-        <a-icon type="close" v-else />
+      <div slot="handle" class="setting-drawer-index-handle" @click="toggle">
+        <a-icon v-if="!visible" type="setting" />
+        <a-icon v-else type="close" />
       </div>
     </a-drawer>
   </div>

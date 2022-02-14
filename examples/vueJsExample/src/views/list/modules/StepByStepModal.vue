@@ -20,8 +20,8 @@
           </a-form-item>
           <a-form-item label="规则描述" :labelCol="labelCol" :wrapperCol="wrapperCol">
             <a-textarea
-              :rows="4"
               v-decorator="['desc', { rules: [{ required: true }] }]"
+              :rows="4"
             ></a-textarea>
           </a-form-item>
         </div>
@@ -81,8 +81,12 @@
       </a-form>
     </a-spin>
     <template slot="footer">
-      <a-button key="back" @click="backward" v-if="currentStep > 0" :style="{ float: 'left' }"
-        >上一步</a-button
+      <a-button
+        v-if="currentStep > 0"
+        key="back"
+        :style="{ float: 'left' }"
+        @click="backward"
+      >上一步</a-button
       >
       <a-button key="cancel" @click="handleCancel">取消</a-button>
       <a-button
@@ -90,7 +94,7 @@
         :loading="confirmLoading"
         type="primary"
         @click="handleNext(currentStep)"
-        >{{ (currentStep === 2 && '完成') || '下一步' }}</a-button
+      >{{ (currentStep === 2 && '完成') || '下一步' }}</a-button
       >
     </template>
   </a-modal>

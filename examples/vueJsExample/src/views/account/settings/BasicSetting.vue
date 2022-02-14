@@ -39,10 +39,10 @@ import AvatarModal from './AvatarModal';
 import { baseMixin } from '@/store/app-mixin';
 
 export default {
-  mixins: [baseMixin],
   components: {
     AvatarModal,
   },
+  mixins: [baseMixin],
   data() {
     return {
       // cropper

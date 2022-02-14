@@ -32,7 +32,7 @@ export function handleScrollHeader(callback) {
   let timer = 0;
 
   let beforeScrollTop = window.pageYOffset;
-  callback = callback || function () {};
+  const _callback = callback || function () {};
   window.addEventListener(
     'scroll',
     (event) => {
@@ -45,7 +45,7 @@ export function handleScrollHeader(callback) {
           return false;
         }
         direction = delta > 0 ? 'down' : 'up';
-        callback(direction);
+        _callback(direction);
         beforeScrollTop = afterScrollTop;
       }, 50);
     },

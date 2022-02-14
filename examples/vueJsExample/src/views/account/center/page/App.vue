@@ -4,9 +4,9 @@
       <a-list-item slot="renderItem" slot-scope="item">
         <a-card :hoverable="true">
           <a-card-meta>
-            <div style="margin-bottom: 3px" slot="title">{{ item.title }}</div>
-            <a-avatar class="card-avatar" slot="avatar" :src="item.avatar" size="small" />
-            <div class="meta-cardInfo" slot="description">
+            <div slot="title" style="margin-bottom: 3px">{{ item.title }}</div>
+            <a-avatar slot="avatar" class="card-avatar" :src="item.avatar" size="small" />
+            <div slot="description" class="meta-cardInfo">
               <div>
                 <p>活跃用户</p>
                 <p>
@@ -19,34 +19,37 @@
               </div>
             </div>
           </a-card-meta>
-          <template class="ant-card-actions" slot="actions">
-            <a>
-              <a-icon type="download" />
-            </a>
-            <a>
-              <a-icon type="edit" />
-            </a>
-            <a>
-              <a-icon type="share-alt" />
-            </a>
-            <a>
-              <a-dropdown>
-                <a class="ant-dropdown-link" href="javascript:;">
-                  <a-icon type="ellipsis" />
-                </a>
-                <a-menu slot="overlay">
-                  <a-menu-item>
-                    <a href="javascript:;">1st menu item</a>
-                  </a-menu-item>
-                  <a-menu-item>
-                    <a href="javascript:;">2nd menu item</a>
-                  </a-menu-item>
-                  <a-menu-item>
-                    <a href="javascript:;">3rd menu item</a>
-                  </a-menu-item>
-                </a-menu>
-              </a-dropdown>
-            </a>
+          <template slot="actions">
+            <div class="ant-card-actions">
+              <a>
+                <a-icon type="download" />
+              </a>
+              <a>
+                <a-icon type="edit" />
+              </a>
+              <a>
+                <a-icon type="share-alt" />
+              </a>
+              <a>
+                <a-dropdown>
+                  <a class="ant-dropdown-link" href="javascript:;">
+                    <a-icon type="ellipsis" />
+                  </a>
+                  <a-menu slot="overlay">
+                    <a-menu-item>
+                      <a href="javascript:;">1st menu item</a>
+                    </a-menu-item>
+                    <a-menu-item>
+                      <a href="javascript:;">2nd menu item</a>
+                    </a-menu-item>
+                    <a-menu-item>
+                      <a href="javascript:;">3rd menu item</a>
+                    </a-menu-item>
+                  </a-menu>
+                </a-dropdown>
+              </a>
+            </div>
+          
           </template>
         </a-card>
       </a-list-item>

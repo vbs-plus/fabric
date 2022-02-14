@@ -3,12 +3,9 @@
     <h3>
       <span>{{ $t('user.register.register') }}</span>
     </h3>
-    <a-form ref="formRegister" :form="form" id="formRegister">
+    <a-form id="formRegister" ref="formRegister" :form="form">
       <a-form-item>
         <a-input
-          size="large"
-          type="text"
-          :placeholder="$t('user.register.email.placeholder')"
           v-decorator="[
             'email',
             {
@@ -16,14 +13,17 @@
               validateTrigger: ['change', 'blur'],
             },
           ]"
+          size="large"
+          type="text"
+          :placeholder="$t('user.register.email.placeholder')"
         ></a-input>
       </a-form-item>
 
       <a-popover
+        v-model="state.passwordLevelChecked"
         placement="rightTop"
         :trigger="['focus']"
         :getPopupContainer="(trigger) => trigger.parentElement"
-        v-model="state.passwordLevelChecked"
       >
         <template slot="content">
           <div :style="{ width: '240px' }">
@@ -40,44 +40,42 @@
         </template>
         <a-form-item>
           <a-input-password
-            size="large"
-            @click="handlePasswordInputClick"
-            :placeholder="$t('user.register.password.placeholder')"
             v-decorator="[
               'password',
               {
                 rules: [
                   { required: true, message: $t('user.password.required') },
-                  { validator: this.handlePasswordLevel },
+                  { validator: handlePasswordLevel },
                 ],
                 validateTrigger: ['change', 'blur'],
               },
             ]"
+            size="large"
+            :placeholder="$t('user.register.password.placeholder')"
+            @click="handlePasswordInputClick"
           ></a-input-password>
         </a-form-item>
       </a-popover>
 
       <a-form-item>
         <a-input-password
-          size="large"
-          :placeholder="$t('user.register.confirm-password.placeholder')"
           v-decorator="[
             'password2',
             {
               rules: [
                 { required: true, message: $t('user.password.required') },
-                { validator: this.handlePasswordCheck },
+                { validator: handlePasswordCheck },
               ],
               validateTrigger: ['change', 'blur'],
             },
           ]"
+          size="large"
+          :placeholder="$t('user.register.confirm-password.placeholder')"
         ></a-input-password>
       </a-form-item>
 
       <a-form-item>
         <a-input
-          size="large"
-          :placeholder="$t('user.login.mobile.placeholder')"
           v-decorator="[
             'mobile',
             {
@@ -87,11 +85,13 @@
                   message: $t('user.phone-number.required'),
                   pattern: /^1[3456789]\d{9}$/,
                 },
-                { validator: this.handlePhoneCheck },
+                { validator: handlePhoneCheck },
               ],
               validateTrigger: ['change', 'blur'],
             },
           ]"
+          size="large"
+          :placeholder="$t('user.login.mobile.placeholder')"
         >
           <a-select slot="addonBefore" size="large" defaultValue="+86">
             <a-select-option value="+86">+86</a-select-option>
@@ -111,13 +111,13 @@
         <a-col class="gutter-row" :span="16">
           <a-form-item>
             <a-input
-              size="large"
-              type="text"
-              :placeholder="$t('user.login.mobile.verification-code.placeholder')"
               v-decorator="[
                 'captcha',
                 { rules: [{ required: true, message: '请输入验证码' }], validateTrigger: 'blur' },
               ]"
+              size="large"
+              type="text"
+              :placeholder="$t('user.login.mobile.verification-code.placeholder')"
             >
               <a-icon slot="prefix" type="mail" :style="{ color: 'rgba(0,0,0,.25)' }" />
             </a-input>
@@ -143,9 +143,9 @@
           htmlType="submit"
           class="register-button"
           :loading="registerBtn"
-          @click.stop.prevent="handleSubmit"
           :disabled="registerBtn"
-          >{{ $t('user.register.register') }}
+          @click.stop.prevent="handleSubmit"
+        >{{ $t('user.register.register') }}
         </a-button>
         <router-link class="login" :to="{ name: 'login' }">{{
           $t('user.register.sign-in')
@@ -207,6 +207,11 @@ export default {
     },
     passwordLevelColor() {
       return levelColor[this.state.passwordLevel];
+    },
+  },
+  watch: {
+    'state.passwordLevel'(val) {
+      console.log(val);
     },
   },
   methods: {
@@ -326,11 +331,6 @@ export default {
         duration: 4,
       });
       this.registerBtn = false;
-    },
-  },
-  watch: {
-    'state.passwordLevel'(val) {
-      console.log(val);
     },
   },
 };

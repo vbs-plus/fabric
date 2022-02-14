@@ -58,10 +58,12 @@
                 :style="(advanced && { float: 'right', overflow: 'hidden' }) || {}"
               >
                 <a-button type="primary" @click="$refs.table.refresh(true)">查询</a-button>
-                <a-button style="margin-left: 8px" @click="() => (this.queryParam = {})"
-                  >重置</a-button
+                <a-button
+                  style="margin-left: 8px"
+                  @click="() => (queryParam = {})"
+                >重置</a-button
                 >
-                <a @click="toggleAdvanced" style="margin-left: 8px">
+                <a style="margin-left: 8px" @click="toggleAdvanced">
                   {{ advanced ? '收起' : '展开' }}
                   <a-icon :type="advanced ? 'up' : 'down'" />
                 </a>
@@ -73,7 +75,7 @@
 
       <div class="table-operator">
         <a-button type="primary" icon="plus" @click="handleAdd">新建</a-button>
-        <a-dropdown v-action:edit v-if="selectedRowKeys.length > 0">
+        <a-dropdown v-if="selectedRowKeys.length > 0" v-action:edit>
           <a-menu slot="overlay">
             <a-menu-item key="1"><a-icon type="delete" />删除</a-menu-item>
             <!-- lock | unlock -->
@@ -104,11 +106,9 @@
         </span>
 
         <span slot="action" slot-scope="text, record">
-          <template>
-            <a @click="handleEdit(record)">配置</a>
-            <a-divider type="vertical" />
-            <a @click="handleSub(record)">订阅报警</a>
-          </template>
+          <a @click="handleEdit(record)">配置</a>
+          <a-divider type="vertical" />
+          <a @click="handleSub(record)">订阅报警</a>
         </span>
       </s-table>
 
@@ -199,6 +199,14 @@ export default {
     CreateForm,
     StepByStepModal,
   },
+  filters: {
+    statusFilter(type) {
+      return statusMap[type].text;
+    },
+    statusTypeFilter(type) {
+      return statusMap[type].status;
+    },
+  },
   data() {
     this.columns = columns;
     return {
@@ -222,17 +230,6 @@ export default {
       selectedRows: [],
     };
   },
-  filters: {
-    statusFilter(type) {
-      return statusMap[type].text;
-    },
-    statusTypeFilter(type) {
-      return statusMap[type].status;
-    },
-  },
-  created() {
-    getRoleList({ t: new Date() });
-  },
   computed: {
     rowSelection() {
       return {
@@ -240,6 +237,9 @@ export default {
         onChange: this.onSelectChange,
       };
     },
+  },
+  created() {
+    getRoleList({ t: new Date() });
   },
   methods: {
     handleAdd() {

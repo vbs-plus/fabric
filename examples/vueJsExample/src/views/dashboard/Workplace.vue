@@ -1,6 +1,6 @@
 <template>
   <page-header-wrapper>
-    <template v-slot:content>
+    <template #content>
       <div class="page-header-content">
         <div class="avatar">
           <a-avatar size="large" :src="currentUser.avatar" />
@@ -13,7 +13,7 @@
         </div>
       </div>
     </template>
-    <template v-slot:extraContent>
+    <template #extraContent>
       <div class="extra-content">
         <div class="stat-item">
           <a-statistic title="项目数" :value="56" />
@@ -40,7 +40,7 @@
           >
             <a slot="extra">全部项目</a>
             <div>
-              <a-card-grid class="project-card-grid" :key="i" v-for="(item, i) in projects">
+              <a-card-grid v-for="(item, i) in projects" :key="i" class="project-card-grid">
                 <a-card :bordered="false" :body-style="{ padding: 0 }">
                   <a-card-meta>
                     <div slot="title" class="card-title">
@@ -62,7 +62,7 @@
 
           <a-card :loading="loading" title="动态" :bordered="false">
             <a-list>
-              <a-list-item :key="index" v-for="(item, index) in activities">
+              <a-list-item v-for="(item, index) in activities" :key="index">
                 <a-list-item-meta>
                   <a-avatar slot="avatar" size="small" :src="item.user.avatar" />
                   <div slot="title">
@@ -78,7 +78,13 @@
             </a-list>
           </a-card>
         </a-col>
-        <a-col style="padding: 0 12px" :xl="8" :lg="24" :md="24" :sm="24" :xs="24">
+        <a-col
+          style="padding: 0 12px"
+          :xl="8"
+          :lg="24"
+          :md="24"
+          :sm="24"
+          :xs="24">
           <a-card
             title="快速开始 / 便捷导航"
             style="margin-bottom: 24px"
@@ -110,7 +116,7 @@
           <a-card :loading="loading" title="团队" :bordered="false">
             <div class="members">
               <a-row>
-                <a-col :span="12" v-for="(item, index) in teams" :key="index">
+                <a-col v-for="(item, index) in teams" :key="index" :span="12">
                   <a>
                     <a-avatar size="small" :src="item.avatar" />
                     <span class="member">{{ item.name }}</span>

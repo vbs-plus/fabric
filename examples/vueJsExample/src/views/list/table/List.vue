@@ -58,7 +58,7 @@
             >
               <a-button type="primary" @click="$refs.table.refresh(true)">查询</a-button>
               <a-button style="margin-left: 8px" @click="() => (queryParam = {})">重置</a-button>
-              <a @click="toggleAdvanced" style="margin-left: 8px">
+              <a style="margin-left: 8px" @click="toggleAdvanced">
                 {{ advanced ? '收起' : '展开' }}
                 <a-icon :type="advanced ? 'up' : 'down'" />
               </a>
@@ -70,10 +70,12 @@
 
     <div class="table-operator">
       <a-button type="primary" icon="plus" @click="handleEdit()">新建</a-button>
-      <a-button type="dashed" @click="tableOption"
-        >{{ (optionAlertShow && '关闭') || '开启' }} alert</a-button
+      <a-button
+        type="dashed"
+        @click="tableOption"
+      >{{ (optionAlertShow && '关闭') || '开启' }} alert</a-button
       >
-      <a-dropdown v-action:edit v-if="selectedRowKeys.length > 0">
+      <a-dropdown v-if="selectedRowKeys.length > 0" v-action:edit>
         <a-menu slot="overlay">
           <a-menu-item key="1"><a-icon type="delete" />删除</a-menu-item>
           <!-- lock | unlock -->
@@ -96,10 +98,8 @@
         {{ index + 1 }}
       </span>
       <span slot="action" slot-scope="text, record">
-        <template>
-          <a @click="handleEdit(record)">编辑</a>
-          <a-divider type="vertical" />
-        </template>
+        <a @click="handleEdit(record)">编辑</a>
+        <a-divider type="vertical" />
         <a-dropdown>
           <a class="ant-dropdown-link"> 更多 <a-icon type="down" /> </a>
           <a-menu slot="overlay">

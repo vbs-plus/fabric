@@ -54,7 +54,7 @@
             >
               <a-button type="primary">查询</a-button>
               <a-button style="margin-left: 8px">重置</a-button>
-              <a @click="toggleAdvanced" style="margin-left: 8px">
+              <a style="margin-left: 8px" @click="toggleAdvanced">
                 {{ advanced ? '收起' : '展开' }}
                 <a-icon :type="advanced ? 'up' : 'down'" />
               </a>
@@ -82,7 +82,7 @@
       :columns="columns"
       :data="loadData"
       :alert="{ show: true, clear: true }"
-      :rowSelection="{ selectedRowKeys: this.selectedRowKeys, onChange: this.onSelectChange }"
+      :rowSelection="{ selectedRowKeys: selectedRowKeys, onChange: onSelectChange }"
     >
       <template
         v-for="(col, index) in columns"
@@ -191,6 +191,20 @@ export default {
       selectedRows: [],
     };
   },
+  watch: {
+    /*
+      'selectedRows': function (selectedRows) {
+        this.needTotalList = this.needTotalList.map(item => {
+          return {
+            ...item,
+            total: selectedRows.reduce( (sum, val) => {
+              return sum + val[item.dataIndex]
+            }, 0)
+          }
+        })
+      }
+      */
+  },
   methods: {
     handleChange(value, key, column, record) {
       console.log(value, key, column);
@@ -234,20 +248,6 @@ export default {
     toggleAdvanced() {
       this.advanced = !this.advanced;
     },
-  },
-  watch: {
-    /*
-      'selectedRows': function (selectedRows) {
-        this.needTotalList = this.needTotalList.map(item => {
-          return {
-            ...item,
-            total: selectedRows.reduce( (sum, val) => {
-              return sum + val[item.dataIndex]
-            }, 0)
-          }
-        })
-      }
-      */
   },
 };
 </script>

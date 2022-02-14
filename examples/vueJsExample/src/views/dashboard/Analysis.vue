@@ -7,7 +7,7 @@
           :title="$t('dashboard.analysis.total-sales')"
           total="￥126,560"
         >
-          <a-tooltip :title="$t('dashboard.analysis.introduce')" slot="action">
+          <a-tooltip slot="action" :title="$t('dashboard.analysis.introduce')">
             <a-icon type="info-circle-o" />
           </a-tooltip>
           <div>
@@ -21,7 +21,7 @@
             </trend>
           </div>
           <template slot="footer"
-            >{{ $t('dashboard.analysis.day-sales') }}<span>￥ 234.56</span></template
+          >{{ $t('dashboard.analysis.day-sales') }}<span>￥ 234.56</span></template
           >
         </chart-card>
       </a-col>
@@ -31,15 +31,15 @@
           :title="$t('dashboard.analysis.visits')"
           :total="8846 | NumberFormat"
         >
-          <a-tooltip :title="$t('dashboard.analysis.introduce')" slot="action">
+          <a-tooltip slot="action" :title="$t('dashboard.analysis.introduce')">
             <a-icon type="info-circle-o" />
           </a-tooltip>
           <div>
             <mini-area />
           </div>
           <template slot="footer"
-            >{{ $t('dashboard.analysis.day-visits')
-            }}<span> {{ '1234' | NumberFormat }}</span></template
+          >{{ $t('dashboard.analysis.day-visits')
+          }}<span> {{ '1234' | NumberFormat }}</span></template
           >
         </chart-card>
       </a-col>
@@ -49,14 +49,14 @@
           :title="$t('dashboard.analysis.payments')"
           :total="6560 | NumberFormat"
         >
-          <a-tooltip :title="$t('dashboard.analysis.introduce')" slot="action">
+          <a-tooltip slot="action" :title="$t('dashboard.analysis.introduce')">
             <a-icon type="info-circle-o" />
           </a-tooltip>
           <div>
             <mini-bar />
           </div>
           <template slot="footer"
-            >{{ $t('dashboard.analysis.conversion-rate') }} <span>60%</span></template
+          >{{ $t('dashboard.analysis.conversion-rate') }} <span>60%</span></template
           >
         </chart-card>
       </a-col>
@@ -66,7 +66,7 @@
           :title="$t('dashboard.analysis.operational-effect')"
           total="78%"
         >
-          <a-tooltip :title="$t('dashboard.analysis.introduce')" slot="action">
+          <a-tooltip slot="action" :title="$t('dashboard.analysis.introduce')">
             <a-icon type="info-circle-o" />
           </a-tooltip>
           <div>
@@ -93,7 +93,7 @@
           size="large"
           :tab-bar-style="{ marginBottom: '24px', paddingLeft: '16px' }"
         >
-          <div class="extra-wrapper" slot="tabBarExtraContent">
+          <div slot="tabBarExtraContent" class="extra-wrapper">
             <div class="extra-item">
               <a>{{ $t('dashboard.analysis.all-day') }}</a>
               <a>{{ $t('dashboard.analysis.all-week') }}</a>
@@ -102,7 +102,7 @@
             </div>
             <a-range-picker :style="{ width: '256px' }" />
           </div>
-          <a-tab-pane loading="true" :tab="$t('dashboard.analysis.sales')" key="1">
+          <a-tab-pane key="1" loading="true" :tab="$t('dashboard.analysis.sales')">
             <a-row>
               <a-col :xl="16" :lg="12" :md="12" :sm="24" :xs="24">
                 <bar :data="barData" :title="$t('dashboard.analysis.sales-trend')" />
@@ -112,7 +112,7 @@
               </a-col>
             </a-row>
           </a-tab-pane>
-          <a-tab-pane :tab="$t('dashboard.analysis.visits')" key="2">
+          <a-tab-pane key="2" :tab="$t('dashboard.analysis.visits')">
             <a-row>
               <a-col :xl="16" :lg="12" :md="12" :sm="24" :xs="24">
                 <bar :data="barData2" :title="$t('dashboard.analysis.visits-trend')" />
@@ -135,7 +135,7 @@
             :title="$t('dashboard.analysis.online-top-search')"
             :style="{ height: '100%' }"
           >
-            <a-dropdown :trigger="['click']" placement="bottomLeft" slot="extra">
+            <a-dropdown slot="extra" :trigger="['click']" placement="bottomLeft">
               <a class="ant-dropdown-link" href="#">
                 <a-icon type="ellipsis" />
               </a>
@@ -153,7 +153,7 @@
                 <number-info :total="12321" :sub-total="17.1">
                   <span slot="subtitle">
                     <span>{{ $t('dashboard.analysis.search-users') }}</span>
-                    <a-tooltip :title="$t('dashboard.analysis.introduce')" slot="action">
+                    <a-tooltip slot="action" :title="$t('dashboard.analysis.introduce')">
                       <a-icon type="info-circle-o" :style="{ marginLeft: '8px' }" />
                     </a-tooltip>
                   </span>
@@ -171,7 +171,7 @@
                 <number-info :total="2.7" :sub-total="26.2" status="down">
                   <span slot="subtitle">
                     <span>{{ $t('dashboard.analysis.per-capita-search') }}</span>
-                    <a-tooltip :title="$t('dashboard.analysis.introduce')" slot="action">
+                    <a-tooltip slot="action" :title="$t('dashboard.analysis.introduce')">
                       <a-icon type="info-circle-o" :style="{ marginLeft: '8px' }" />
                     </a-tooltip>
                   </span>
@@ -356,7 +356,6 @@ const pieData = dv.rows;
 
 export default {
   name: 'Analysis',
-  mixins: [baseMixin],
   components: {
     ChartCard,
     MiniArea,
@@ -368,6 +367,7 @@ export default {
     NumberInfo,
     MiniSmoothArea,
   },
+  mixins: [baseMixin],
   data() {
     return {
       loading: true,
