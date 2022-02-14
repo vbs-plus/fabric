@@ -3,10 +3,6 @@ import * as fs from 'fs';
 import { compare } from 'compare-versions';
 // import tsEslintConfig from './tsEslintConfig';
 
-// const parserOptions = {
-//   parser: '@babel/eslint-parser',
-// };
-
 const isVue3Project = ((packageJsonPath = 'package.json') => {
   const json = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
   const vueVersion = json.dependencies.vue;
@@ -55,11 +51,6 @@ module.exports = {
         'plugin:vue/vue3-strongly-recommended',
         'plugin:vue/vue3-recommended',
         'plugin:@typescript-eslint/eslint-recommended',
-        // 'plugin:vue/vue3-essential',
-        // 'eslint:recommended',
-        // '@vue/typescript/recommended',
-        // '@vue/prettier',
-        // '@vue/prettier/@typescript-eslint',
       ]
     : [
         'prettier',
@@ -68,11 +59,6 @@ module.exports = {
         'plugin:vue/strongly-recommended',
         'plugin:vue/recommended',
         'plugin:@typescript-eslint/eslint-recommended',
-        // 'plugin:vue/essential',
-        // '@vue/prettier',
-        // 'eslint:recommended',
-        // '@vue/typescript/recommended',
-        // '@vue/prettier/@typescript-eslint',
       ],
   rules: {
     strict: ['error', 'never'],
@@ -122,42 +108,4 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
   },
-  // settings: {
-  //   // support import modules from TypeScript files in JavaScript files
-  //   'import/resolver': {
-  //     node: {
-  //       extensions: isTsProject ? ['.js', '.ts', '.d.ts'] : ['.js'],
-  //     },
-  //   },
-  //   'import/parsers': {
-  //     '@typescript-eslint/parser': isTsProject ? ['.ts', '.tsx', '.d.ts'] : ['.ts', '.d.ts'],
-  //   },
-  //   'import/extensions': ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts'],
-  //   'import/external-module-folders': ['node_modules', 'node_modules/@types'],
-  //   polyfills: ['fetch', 'Promise', 'URL', 'object-assign'],
-  // },
-  // overrides: isTsProject
-  //   ? [
-  //       {
-  //         files: ['**/*.{ts,tsx}'],
-  //         parser: '@typescript-eslint/parser',
-  //         rules: tsEslintConfig,
-  //         extends: ['prettier', 'plugin:@typescript-eslint/recommended'],
-  //       },
-  //       {
-  //         files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)'],
-  //         env: {
-  //           jest: true,
-  //         },
-  //       },
-  //     ]
-  //   : [
-  //       {
-  //         files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)'],
-  //         env: {
-  //           jest: true,
-  //         },
-  //       },
-  //     ],
-  // parserOptions,
 };
