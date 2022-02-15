@@ -1,6 +1,6 @@
 {
   "name": "@vbs/fabric",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A rule library is used to manage the code writing specifications of team members.",
   "keywords": [
     "vbs",
