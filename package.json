@@ -1,6 +1,6 @@
 {
   "name": "@vbs/fabric",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A rule library is used to manage the code writing specifications of team members.",
   "keywords": [
     "vbs",
@@ -36,9 +36,10 @@
     "lint-js": "npm run build && cd jsExample && npm run lint",
     "prepublishOnly": "npm run build && npm test && np --no-cleanup --yolo --no-publish --any-branch",
     "prettier": "prettier -c --write \"**/*\"",
-    "test": "npm run testTS && npm run testJS",
+    "test": "npm run testReactJS && npm run testReactTS && npm run testVueJS",
     "testReactJS": "npm run build && cd examples/reactJsExample && npm run lint",
-    "testReactTS": "npm run build && cd examples/reactTsExample && npm run lint"
+    "testReactTS": "npm run build && cd examples/reactTsExample && npm run lint",
+    "testVueJS": "npm run build && cd examples/vueJsExample && npm run lint"
   },
   "dependencies": {
     "@babel/core": "^7.12.10",
