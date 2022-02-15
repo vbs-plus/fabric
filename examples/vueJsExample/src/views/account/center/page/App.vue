@@ -10,7 +10,10 @@
               <div>
                 <p>活跃用户</p>
                 <p>
-                  <span>{{ item.activeUser }}<span>万</span></span>
+                  <span>
+                    {{ item.activeUser }}
+                    <span>万</span>
+                  </span>
                 </p>
               </div>
               <div>
@@ -49,7 +52,6 @@
                 </a-dropdown>
               </a>
             </div>
-          
           </template>
         </a-card>
       </a-list-item>

@@ -4,9 +4,9 @@
     :collapsed="collapsed"
     :media-query="query"
     :is-mobile="isMobile"
-    :handle-media-query="handleMediaQuery"
-    :handle-collapse="handleCollapse"
-    :i18n-render="i18nRender"
+    :handleMediaQuery="handleMediaQuery"
+    :handleCollapse="handleCollapse"
+    :i18nRender="i18nRender"
     v-bind="settings"
   >
     <!-- Ads begin
@@ -44,14 +44,8 @@
       </div>
     </template>
 
-    <setting-drawer
-      v-if="isDev"
-      :settings="settings"
-      @change="handleSettingChange"
-    >
-      <div style="margin: 12px 0">
-        This is SettingDrawer custom footer content.
-      </div>
+    <setting-drawer v-if="isDev" :settings="settings" @change="handleSettingChange">
+      <div style="margin: 12px 0">This is SettingDrawer custom footer content.</div>
     </setting-drawer>
     <template #rightContentRender>
       <right-content

@@ -22,7 +22,10 @@
           </a-row>
           <a-row>
             <a-col :sm="8" :xs="24">转账金额：</a-col>
-            <a-col :sm="16" :xs="24"><span class="money">500</span> 元</a-col>
+            <a-col :sm="16" :xs="24">
+              <span class="money">500</span>
+              元
+            </a-col>
           </a-row>
         </div>
         <template #extra>

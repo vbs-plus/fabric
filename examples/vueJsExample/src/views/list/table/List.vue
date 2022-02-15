@@ -70,18 +70,25 @@
 
     <div class="table-operator">
       <a-button type="primary" icon="plus" @click="handleEdit()">新建</a-button>
-      <a-button
-        type="dashed"
-        @click="tableOption"
-      >{{ (optionAlertShow && '关闭') || '开启' }} alert</a-button
-      >
+      <a-button type="dashed" @click="tableOption">
+        {{ (optionAlertShow && '关闭') || '开启' }} alert
+      </a-button>
       <a-dropdown v-if="selectedRowKeys.length > 0" v-action:edit>
         <a-menu slot="overlay">
-          <a-menu-item key="1"><a-icon type="delete" />删除</a-menu-item>
+          <a-menu-item key="1">
+            <a-icon type="delete" />
+            删除
+          </a-menu-item>
           <!-- lock | unlock -->
-          <a-menu-item key="2"><a-icon type="lock" />锁定</a-menu-item>
+          <a-menu-item key="2">
+            <a-icon type="lock" />
+            锁定
+          </a-menu-item>
         </a-menu>
-        <a-button style="margin-left: 8px"> 批量操作 <a-icon type="down" /> </a-button>
+        <a-button style="margin-left: 8px">
+          批量操作
+          <a-icon type="down" />
+        </a-button>
       </a-dropdown>
     </div>
 
@@ -101,7 +108,10 @@
         <a @click="handleEdit(record)">编辑</a>
         <a-divider type="vertical" />
         <a-dropdown>
-          <a class="ant-dropdown-link"> 更多 <a-icon type="down" /> </a>
+          <a class="ant-dropdown-link">
+            更多
+            <a-icon type="down" />
+          </a>
           <a-menu slot="overlay">
             <a-menu-item>
               <a href="javascript:;">详情</a>

@@ -35,7 +35,7 @@ export function handleScrollHeader(callback) {
   const _callback = callback || function () {};
   window.addEventListener(
     'scroll',
-    (event) => {
+    () => {
       clearTimeout(timer);
       timer = setTimeout(() => {
         let direction = 'up';

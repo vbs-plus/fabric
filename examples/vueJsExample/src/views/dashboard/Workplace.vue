@@ -7,7 +7,8 @@
         </div>
         <div class="content">
           <div class="content-title">
-            {{ timeFix }}，{{ user.name }}<span class="welcome-text">，{{ welcome }}</span>
+            {{ timeFix }}，{{ user.name }}
+            <span class="welcome-text">，{{ welcome }}</span>
           </div>
           <div>前端工程师 | 蚂蚁金服 - 某某某事业群 - VUE平台</div>
         </div>
@@ -66,10 +67,12 @@
                 <a-list-item-meta>
                   <a-avatar slot="avatar" size="small" :src="item.user.avatar" />
                   <div slot="title">
-                    <span>{{ item.user.nickname }}</span
-                    >&nbsp; 在&nbsp;<a href="#">{{ item.project.name }}</a
-                    >&nbsp; <span>{{ item.project.action }}</span
-                    >&nbsp;
+                    <span>{{ item.user.nickname }}</span>
+                    &nbsp; 在&nbsp;
+                    <a href="#">{{ item.project.name }}</a>
+                    &nbsp;
+                    <span>{{ item.project.action }}</span>
+                    &nbsp;
                     <a href="#">{{ item.project.event }}</a>
                   </div>
                   <div slot="description">{{ item.time }}</div>
@@ -78,13 +81,7 @@
             </a-list>
           </a-card>
         </a-col>
-        <a-col
-          style="padding: 0 12px"
-          :xl="8"
-          :lg="24"
-          :md="24"
-          :sm="24"
-          :xs="24">
+        <a-col style="padding: 0 12px" :xl="8" :lg="24" :md="24" :sm="24" :xs="24">
           <a-card
             title="快速开始 / 便捷导航"
             style="margin-bottom: 24px"
@@ -219,11 +216,11 @@ export default {
     this.user = this.userInfo;
     this.avatar = this.userInfo.avatar;
 
-    getRoleList().then((res) => {
+    getRoleList().then(() => {
       // console.log('workplace -> call getRoleList()', res)
     });
 
-    getServiceList().then((res) => {
+    getServiceList().then(() => {
       // console.log('workplace -> call getServiceList()', res)
     });
   },

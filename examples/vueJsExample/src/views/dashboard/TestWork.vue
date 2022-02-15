@@ -27,11 +27,9 @@
             </a-form>
           </div>
         </template>
-        <a-button
-          style="margin-right: 16px"
-          @click="() => (visible = !visible)"
-        >修改当前 Tab 名称</a-button
-        >
+        <a-button style="margin-right: 16px" @click="() => (visible = !visible)">
+          修改当前 Tab 名称
+        </a-button>
       </a-popconfirm>
 
       <a-popconfirm
@@ -43,7 +41,11 @@
       >
         <template #title>
           <div>
-            <p>页面 KEY 是由页面的路由 <code>path</code> 决定的</p>
+            <p>
+              页面 KEY 是由页面的路由
+              <code>path</code>
+              决定的
+            </p>
             <p>如果要修改某一个页面标题，该页面必须已经被打开在 Tab 栏</p>
             <p>后期可以考虑优化到编程式 Tab 栏，就可以没有这种限制</p>
             <a-form :form="form2" layout="inline">
@@ -67,11 +69,9 @@
     <a-divider />
     <div class="page-loading-test">
       <h4>全局遮罩测试</h4>
-      <a-button
-        style="margin-right: 16px"
-        @click="handleOpenLoading"
-      >打开遮罩(5s 自动关闭)</a-button
-      >
+      <a-button style="margin-right: 16px" @click="handleOpenLoading">
+        打开遮罩(5s 自动关闭)
+      </a-button>
       <a-button @click="handleOpenLoadingCustomTip">打开遮罩(自定义提示语)</a-button>
     </div>
   </div>

@@ -13,16 +13,18 @@
         <div style="margin-bottom: 16px">
           <a-icon type="close-circle-o" style="color: #f5222d; margin-right: 8px" />
           {{ $t('result.fail.error.hint-text1') }}
-          <a style="margin-left: 16px"
-          >{{ $t('result.fail.error.hint-btn1') }} <a-icon type="right"
-          /></a>
+          <a style="margin-left: 16px">
+            {{ $t('result.fail.error.hint-btn1') }}
+            <a-icon type="right" />
+          </a>
         </div>
         <div>
           <a-icon type="close-circle-o" style="color: #f5222d; margin-right: 8px" />
           {{ $t('result.fail.error.hint-text2') }}
-          <a style="margin-left: 16px"
-          >{{ $t('result.fail.error.hint-btn2') }} <a-icon type="right"
-          /></a>
+          <a style="margin-left: 16px">
+            {{ $t('result.fail.error.hint-btn2') }}
+            <a-icon type="right" />
+          </a>
         </div>
       </div>
     </a-result>

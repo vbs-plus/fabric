@@ -34,7 +34,7 @@
               <a-avatar slot="avatar" class="card-avatar" :src="item.avatar" size="large" />
               <div slot="description" class="meta-content">{{ item.content }}</div>
             </a-card-meta>
-            <template slot="actions" >
+            <template slot="actions">
               <div class="ant-card-actions">
                 <a>操作一</a>
                 <a>操作二</a>

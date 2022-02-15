@@ -53,7 +53,7 @@ export default {
     handleToSettings() {
       this.$router.push({ path: '/account/settings' });
     },
-    handleLogout(e) {
+    handleLogout() {
       Modal.confirm({
         title: this.$t('layouts.usermenu.dialog.title'),
         content: this.$t('layouts.usermenu.dialog.content'),

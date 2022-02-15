@@ -34,7 +34,7 @@
               :strokeColor="passwordLevelColor"
             />
             <div style="margin-top: 10px">
-              <span>{{ $t('user.register.password.popover-message') }} </span>
+              <span>{{ $t('user.register.password.popover-message') }}</span>
             </div>
           </div>
         </template>
@@ -145,11 +145,12 @@
           :loading="registerBtn"
           :disabled="registerBtn"
           @click.stop.prevent="handleSubmit"
-        >{{ $t('user.register.register') }}
+        >
+          {{ $t('user.register.register') }}
         </a-button>
-        <router-link class="login" :to="{ name: 'login' }">{{
-          $t('user.register.sign-in')
-        }}</router-link>
+        <router-link class="login" :to="{ name: 'login' }">
+          {{ $t('user.register.sign-in') }}
+        </router-link>
       </a-form-item>
     </a-form>
   </div>

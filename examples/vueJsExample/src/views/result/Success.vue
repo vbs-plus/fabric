@@ -22,9 +22,9 @@
             曲丽丽是谁？
           </a-col>
           <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="12">
-            <span style="color: rgba(0, 0, 0, 0.85)"
-            >{{ $t('result.success.operate-time') }}：</span
-            >
+            <span style="color: rgba(0, 0, 0, 0.85)">
+              {{ $t('result.success.operate-time') }}：
+            </span>
             2016-12-12 ~ 2017-12-12
           </a-col>
         </a-row>

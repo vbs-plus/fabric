@@ -30,9 +30,9 @@
                   placeholder="选择 onwer"
                   @change="handleChange"
                 >
-                  <a-select-option v-for="item in owners" :key="item.id">{{
-                    item.name
-                  }}</a-select-option>
+                  <a-select-option v-for="item in owners" :key="item.id">
+                    {{ item.name }}
+                  </a-select-option>
                 </a-select>
                 <a class="list-articles-trigger" @click="setOwner">只看自己的</a>
               </a-form-item>

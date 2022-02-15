@@ -54,8 +54,9 @@
         type="dashed"
         icon="plus"
         @click="newMember"
-      >新增成员</a-button
       >
+        新增成员
+      </a-button>
     </a-card>
 
     <!-- fixed footer toolbar -->
@@ -80,7 +81,8 @@
             </li>
           </template>
           <span v-if="errors.length > 0" class="antd-pro-pages-forms-style-errorIcon">
-            <a-icon type="exclamation-circle" />{{ errors.length }}
+            <a-icon type="exclamation-circle" />
+            {{ errors.length }}
           </span>
         </a-popover>
       </span>

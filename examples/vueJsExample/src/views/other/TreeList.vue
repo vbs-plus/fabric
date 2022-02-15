@@ -26,7 +26,10 @@
               <a-divider type="vertical" />
             </template>
             <a-dropdown>
-              <a class="ant-dropdown-link"> 更多 <a-icon type="down" /> </a>
+              <a class="ant-dropdown-link">
+                更多
+                <a-icon type="down" />
+              </a>
               <a-menu slot="overlay">
                 <a-menu-item>
                   <a href="javascript:;">详情</a>

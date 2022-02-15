@@ -47,9 +47,9 @@
               <span>{{ role.permissionName }}：</span>
             </a-col>
             <a-col v-if="role.actionList && role.actionList.length > 0" :lg="20" :md="24">
-              <a-tag v-for="action in role.actionList" :key="action" color="cyan">{{
-                action | permissionFilter
-              }}</a-tag>
+              <a-tag v-for="action in role.actionList" :key="action" color="cyan">
+                {{ action | permissionFilter }}
+              </a-tag>
             </a-col>
             <a-col v-else :span="20">-</a-col>
           </a-col>
@@ -61,7 +61,10 @@
         <a @click="handleEdit(record)">编辑</a>
         <a-divider type="vertical" />
         <a-dropdown>
-          <a class="ant-dropdown-link"> 更多 <a-icon type="down" /> </a>
+          <a class="ant-dropdown-link">
+            更多
+            <a-icon type="down" />
+          </a>
           <a-menu slot="overlay">
             <a-menu-item>
               <a href="javascript:;">详情</a>

@@ -11,8 +11,14 @@
             <div class="bio">海纳百川，有容乃大</div>
           </div>
           <div class="account-center-detail">
-            <p><i class="title"></i>交互专家</p>
-            <p><i class="group"></i>蚂蚁金服－某某某事业群－某某平台部－某某技术部－UED</p>
+            <p>
+              <i class="title"></i>
+              交互专家
+            </p>
+            <p>
+              <i class="group"></i>
+              蚂蚁金服－某某某事业群－某某平台部－某某技术部－UED
+            </p>
             <p>
               <i class="address"></i>
               <span>浙江省</span>
@@ -26,17 +32,13 @@
             <div>
               <template v-for="(tag, index) in tags">
                 <a-tooltip v-if="tag.length > 20" :key="tag" :title="tag">
-                  <a-tag :key="tag" :closable="index !== 0" :close="() => handleTagClose(tag)">{{
-                    `${tag.slice(0, 20)}...`
-                  }}</a-tag>
+                  <a-tag :key="tag" :closable="index !== 0" :close="() => handleTagClose(tag)">
+                    {{ `${tag.slice(0, 20)}...` }}
+                  </a-tag>
                 </a-tooltip>
-                <a-tag
-                  v-else
-                  :key="tag"
-                  :closable="index !== 0"
-                  :close="() => handleTagClose(tag)"
-                >{{ tag }}</a-tag
-                >
+                <a-tag v-else :key="tag" :closable="index !== 0" :close="() => handleTagClose(tag)">
+                  {{ tag }}
+                </a-tag>
               </template>
               <a-input
                 v-if="tagInputVisible"
@@ -50,7 +52,8 @@
                 @keyup.enter="handleTagInputConfirm"
               />
               <a-tag v-else style="background: #fff; borderstyle: dashed" @click="showTagInput">
-                <a-icon type="plus" />New Tag
+                <a-icon type="plus" />
+                New Tag
               </a-tag>
             </div>
           </div>

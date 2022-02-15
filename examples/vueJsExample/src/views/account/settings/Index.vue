@@ -91,7 +91,7 @@ export default {
     };
   },
   watch: {
-    $route(val) {
+    $route() {
       this.updateMenu();
     },
   },

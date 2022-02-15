@@ -29,9 +29,9 @@
 
     <s-table :columns="columns" :data="loadData">
       <span slot="actions" slot-scope="text, record">
-        <a-tag v-for="(action, index) in record.actionList" :key="index">{{
-          action.describe
-        }}</a-tag>
+        <a-tag v-for="(action, index) in record.actionList" :key="index">
+          {{ action.describe }}
+        </a-tag>
       </span>
 
       <span slot="status" slot-scope="text">
@@ -42,7 +42,10 @@
         <a @click="handleEdit(record)">编辑</a>
         <a-divider type="vertical" />
         <a-dropdown>
-          <a class="ant-dropdown-link"> 更多 <a-icon type="down" /> </a>
+          <a class="ant-dropdown-link">
+            更多
+            <a-icon type="down" />
+          </a>
           <a-menu slot="overlay">
             <a-menu-item>
               <a href="javascript:;">详情</a>
@@ -111,8 +114,9 @@
               v-for="(action, index) in permissionList"
               :key="index"
               :value="action.value"
-            >{{ action.label }}</a-select-option
             >
+              {{ action.label }}
+            </a-select-option>
           </a-select>
         </a-form-item>
       </a-form>

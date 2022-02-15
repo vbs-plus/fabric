@@ -49,7 +49,8 @@
           </template>
           <template #description>
             <div class="antd-pro-pages-profile-advanced-style-stepDescription">
-              曲丽丽<a-icon type="dingding" style="margin-left: 8px" />
+              曲丽丽
+              <a-icon type="dingding" style="margin-left: 8px" />
               <div>2016-12-12 12:32</div>
             </div>
           </template>
@@ -60,7 +61,8 @@
           </template>
           <template #description>
             <div class="antd-pro-pages-profile-advanced-style-stepDescription">
-              周毛毛<a-icon type="dingding" style="color: rgb(0, 160, 233); margin-left: 8px" />
+              周毛毛
+              <a-icon type="dingding" style="color: rgb(0, 160, 233); margin-left: 8px" />
               <div><a>催一下</a></div>
             </div>
           </template>
@@ -76,9 +78,9 @@
         <a-descriptions-item label="会员卡号">32943898021309809423</a-descriptions-item>
         <a-descriptions-item label="身份证">3321944288191034921</a-descriptions-item>
         <a-descriptions-item label="联系方式">18112345678</a-descriptions-item>
-        <a-descriptions-item label="联系地址"
-        >浙江省杭州市西湖区黄姑山路工专路交叉路口</a-descriptions-item
-        >
+        <a-descriptions-item label="联系地址">
+          浙江省杭州市西湖区黄姑山路工专路交叉路口
+        </a-descriptions-item>
       </a-descriptions>
       <a-descriptions title="信息组">
         <a-descriptions-item label="某某数据">725</a-descriptions-item>
@@ -94,16 +96,16 @@
           <a-descriptions-item label="角色码">1234567</a-descriptions-item>
           <a-descriptions-item label="所属部门">XX公司-YY部</a-descriptions-item>
           <a-descriptions-item label="过期时间">2018-08-08</a-descriptions-item>
-          <a-descriptions-item label="描述"
-          >这段描述很长很长很长很长很长很长很长很长很长很长很长很长很长很长...</a-descriptions-item
-          >
+          <a-descriptions-item label="描述">
+            这段描述很长很长很长很长很长很长很长很长很长很长很长很长很长很长...
+          </a-descriptions-item>
         </a-descriptions>
         <a-divider style="margin: 16px 0" />
         <a-descriptions title="组名称" size="small" :col="1">
           <a-descriptions-item label="学名">
             Citrullus lanatus (Thunb.) Matsum. et
-            Nakai一年生蔓生藤本；茎、枝粗壮，具明显的棱。卷须较粗..</a-descriptions-item
-          >
+            Nakai一年生蔓生藤本；茎、枝粗壮，具明显的棱。卷须较粗..
+          </a-descriptions-item>
         </a-descriptions>
         <a-divider style="margin: 16px 0" />
         <a-descriptions title="组名称" size="small" :col="2">
@@ -114,7 +116,10 @@
     </a-card>
 
     <a-card style="margin-top: 24px" :bordered="false" title="用户近半年来电记录">
-      <div class="no-data"><a-icon type="frown-o" />暂无数据</div>
+      <div class="no-data">
+        <a-icon type="frown-o" />
+        暂无数据
+      </div>
     </a-card>
 
     <!-- 操作 -->

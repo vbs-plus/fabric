@@ -87,7 +87,7 @@
           :required="false"
         >
           <a-input-number :min="0" :max="100" />
-          <span> %</span>
+          <span>%</span>
         </a-form-item>
         <a-form-item
           :label="$t('form.basic-form.public.label')"
@@ -110,9 +110,9 @@
           </a-form-item>
         </a-form-item>
         <a-form-item :wrapperCol="{ span: 24 }" style="text-align: center">
-          <a-button htmlType="submit" type="primary">{{
-            $t('form.basic-form.form.submit')
-          }}</a-button>
+          <a-button htmlType="submit" type="primary">
+            {{ $t('form.basic-form.form.submit') }}
+          </a-button>
           <a-button style="margin-left: 8px">{{ $t('form.basic-form.form.save') }}</a-button>
         </a-form-item>
       </a-form>

@@ -10,15 +10,15 @@
     "lint-staged": "lint-staged",
     "lint-staged:js": "eslint --ext .js,.ts ",
     "lint:fix": "eslint --fix --cache --ext .js,.ts,.vue --format=pretty ./src && npm run lint:style",
-    "lint:js": "eslint --cache --ext .js,.ts,.vue --format=pretty ./src",
+    "lint:js": "eslint --cache --ext .vue,.js,.ts --format=pretty ./src",
     "lint:prettier": "prettier -c --write \"src/**/*\" --end-of-line auto",
     "lint:style": "stylelint --fix \"src/**/*.less\" --custom-syntax postcss-less",
     "prettier": "prettier -c --write \"src/**/*\""
   },
   "lint-staged": {
     "**/*.less": "stylelint --custom-syntax postcss-less",
-    "**/*.{js,ts}": "npm run lint-staged:js",
-    "**/*.{js,ts,less,md,json}": [
+    "**/*.{vue,js,ts}": "npm run lint-staged:js",
+    "**/*.{vue,js,ts,less,md,json}": [
       "prettier --write"
     ]
   },

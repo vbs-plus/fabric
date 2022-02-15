@@ -43,8 +43,8 @@
               </a-list-item>
             </a-list>
           </a-tab-pane>
-          <a-tab-pane key="2" tab="消息"> 123 </a-tab-pane>
-          <a-tab-pane key="3" tab="待办"> 123 </a-tab-pane>
+          <a-tab-pane key="2" tab="消息">123</a-tab-pane>
+          <a-tab-pane key="3" tab="待办">123</a-tab-pane>
         </a-tabs>
       </a-spin>
     </template>

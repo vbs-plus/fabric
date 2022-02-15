@@ -40,9 +40,9 @@
               <span>{{ role.permissionName }}：</span>
             </a-col>
             <a-col v-if="role.actionEntitySet.length > 0" :span="20">
-              <a-tag v-for="(action, k) in role.actionEntitySet" :key="k" color="cyan">{{
-                action.describe
-              }}</a-tag>
+              <a-tag v-for="(action, k) in role.actionEntitySet" :key="k" color="cyan">
+                {{ action.describe }}
+              </a-tag>
             </a-col>
             <a-col v-else :span="20">-</a-col>
           </a-col>
@@ -52,7 +52,10 @@
         <a @click="$refs.modal.edit(record)">编辑</a>
         <a-divider type="vertical" />
         <a-dropdown>
-          <a class="ant-dropdown-link"> 更多 <a-icon type="down" /> </a>
+          <a class="ant-dropdown-link">
+            更多
+            <a-icon type="down" />
+          </a>
           <a-menu slot="overlay">
             <a-menu-item>
               <a href="javascript:;">详情</a>

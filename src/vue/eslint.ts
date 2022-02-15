@@ -30,7 +30,6 @@ if (isTsProject) {
   }
 }
 
-console.log('Lint Vue Project:', `Vue version is Vue${isVue3Project ? 3 : 2}`);
 module.exports = {
   root: true,
   env: {
@@ -41,24 +40,25 @@ module.exports = {
     jest: true,
     jasmine: true,
   },
-  parser: 'vue-eslint-parser',
   plugins: ['jest', 'vue', '@typescript-eslint'],
   extends: isVue3Project
     ? [
         'prettier',
+        'eslint:recommended',
+        'plugin:@typescript-eslint/eslint-recommended',
         'plugin:vue/vue3-recommended',
         'plugin:vue/vue3-essential',
         'plugin:vue/vue3-strongly-recommended',
         'plugin:vue/vue3-recommended',
-        'plugin:@typescript-eslint/eslint-recommended',
       ]
     : [
         'prettier',
+        'eslint:recommended',
+        'plugin:@typescript-eslint/eslint-recommended',
         'plugin:vue/recommended',
         'plugin:vue/essential',
         'plugin:vue/strongly-recommended',
         'plugin:vue/recommended',
-        'plugin:@typescript-eslint/eslint-recommended',
       ],
   rules: {
     strict: ['error', 'never'],
@@ -84,11 +84,22 @@ module.exports = {
       2,
       {
         singleline: {
-          max: 5,
+          max: 20,
         },
         multiline: {
           max: 1,
         },
+      },
+    ],
+    'vue/html-indent': [
+      'error',
+      2,
+      {
+        attribute: 1,
+        baseIndent: 1,
+        closeBracket: 0,
+        alignAttributesVertically: true,
+        ignores: [],
       },
     ],
     'vue/attribute-hyphenation': 0,
@@ -103,9 +114,14 @@ module.exports = {
     'vue/no-parsing-error': 0,
     'vue/multi-word-component-names': 0,
   },
+  parser: 'vue-eslint-parser',
   parserOptions: {
     ecmaVersion: 2020,
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
+    extraFileExtensions: ['.vue'],
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
 };

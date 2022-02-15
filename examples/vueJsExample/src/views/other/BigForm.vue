@@ -442,8 +442,9 @@
       type="dashed"
       icon="plus"
       @click="newMember"
-    >新增成员</a-button
     >
+      新增成员
+    </a-button>
   </a-card>
 </template>
 
@@ -537,9 +538,9 @@ export default {
       }
     },
 
-    toggle(record) {},
-    saveRow(record) {},
-    cancel(key) {},
+    toggle() {},
+    saveRow() {},
+    cancel() {},
     remove(key) {
       this.data = this.data.filter((item) => item.key !== key);
     },

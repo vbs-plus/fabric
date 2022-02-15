@@ -22,9 +22,15 @@
       >
         <div class="step-form-wrapper">
           <p v-if="!stepLoading" style="text-align: center">
-            请在手机中打开 Google Authenticator 或两步验证 APP<br />输入 6 位动态码
+            请在手机中打开 Google Authenticator 或两步验证 APP
+            <br />
+            输入 6 位动态码
           </p>
-          <p v-else style="text-align: center">正在验证..<br />请稍后</p>
+          <p v-else style="text-align: center">
+            正在验证..
+            <br />
+            请稍后
+          </p>
           <a-form-item
             :style="{ textAlign: 'center' }"
             hasFeedback

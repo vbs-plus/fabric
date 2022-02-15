@@ -11,6 +11,18 @@ export default {
       newTabIndex: 0,
     };
   },
+  watch: {
+    $route: function (newVal) {
+      this.activeKey = newVal.fullPath;
+      if (this.fullPathList.indexOf(newVal.fullPath) < 0) {
+        this.fullPathList.push(newVal.fullPath);
+        this.pages.push(newVal);
+      }
+    },
+    activeKey: function (newPathKey) {
+      this.$router.push({ path: newPathKey });
+    },
+  },
   created() {
     // bind event
     events
@@ -33,7 +45,9 @@ export default {
           const item = this.pages.find((item) => item.path === key);
           item.meta.customTitle = name;
           this.$forceUpdate();
-        } catch (e) {}
+        } catch (e) {
+          console.warn(e);
+        }
       });
 
     this.pages.push(this.$route);
@@ -101,12 +115,11 @@ export default {
       this[key](route);
     },
     renderTabPaneMenu(e) {
-      
       return (
         <a-menu
           {...{
             on: {
-              click: ({ key, item, domEvent }) => {
+              click: ({ key }) => {
                 this.closeMenuClick(key, e);
               },
             },
@@ -128,18 +141,6 @@ export default {
           <span style={{ userSelect: 'none' }}>{title}</span>
         </a-dropdown>
       );
-    },
-  },
-  watch: {
-    $route: function (newVal) {
-      this.activeKey = newVal.fullPath;
-      if (this.fullPathList.indexOf(newVal.fullPath) < 0) {
-        this.fullPathList.push(newVal.fullPath);
-        this.pages.push(newVal);
-      }
-    },
-    activeKey: function (newPathKey) {
-      this.$router.push({ path: newPathKey });
     },
   },
   render() {

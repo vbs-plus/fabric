@@ -20,9 +20,10 @@
               11%
             </trend>
           </div>
-          <template slot="footer"
-          >{{ $t('dashboard.analysis.day-sales') }}<span>￥ 234.56</span></template
-          >
+          <template slot="footer">
+            {{ $t('dashboard.analysis.day-sales') }}
+            <span>￥ 234.56</span>
+          </template>
         </chart-card>
       </a-col>
       <a-col :sm="24" :md="12" :xl="6" :style="{ marginBottom: '24px' }">
@@ -37,10 +38,10 @@
           <div>
             <mini-area />
           </div>
-          <template slot="footer"
-          >{{ $t('dashboard.analysis.day-visits')
-          }}<span> {{ '1234' | NumberFormat }}</span></template
-          >
+          <template slot="footer">
+            {{ $t('dashboard.analysis.day-visits') }}
+            <span>{{ '1234' | NumberFormat }}</span>
+          </template>
         </chart-card>
       </a-col>
       <a-col :sm="24" :md="12" :xl="6" :style="{ marginBottom: '24px' }">
@@ -55,9 +56,10 @@
           <div>
             <mini-bar />
           </div>
-          <template slot="footer"
-          >{{ $t('dashboard.analysis.conversion-rate') }} <span>60%</span></template
-          >
+          <template slot="footer">
+            {{ $t('dashboard.analysis.conversion-rate') }}
+            <span>60%</span>
+          </template>
         </chart-card>
       </a-col>
       <a-col :sm="24" :md="12" :xl="6" :style="{ marginBottom: '24px' }">
@@ -195,7 +197,7 @@
                 :pagination="{ pageSize: 5 }"
               >
                 <span slot="range" slot-scope="text, record">
-                  <trend :flag="record.status === 0 ? 'up' : 'down'"> {{ text }}% </trend>
+                  <trend :flag="record.status === 0 ? 'up' : 'down'">{{ text }}%</trend>
                 </span>
               </a-table>
             </div>
@@ -226,15 +228,15 @@
               </span>
               <div class="analysis-salesTypeRadio">
                 <a-radio-group defaultValue="a">
-                  <a-radio-button value="a">{{
-                    $t('dashboard.analysis.channel.all')
-                  }}</a-radio-button>
-                  <a-radio-button value="b">{{
-                    $t('dashboard.analysis.channel.online')
-                  }}</a-radio-button>
-                  <a-radio-button value="c">{{
-                    $t('dashboard.analysis.channel.stores')
-                  }}</a-radio-button>
+                  <a-radio-button value="a">
+                    {{ $t('dashboard.analysis.channel.all') }}
+                  </a-radio-button>
+                  <a-radio-button value="b">
+                    {{ $t('dashboard.analysis.channel.online') }}
+                  </a-radio-button>
+                  <a-radio-button value="c">
+                    {{ $t('dashboard.analysis.channel.stores') }}
+                  </a-radio-button>
                 </a-radio-group>
               </div>
             </div>

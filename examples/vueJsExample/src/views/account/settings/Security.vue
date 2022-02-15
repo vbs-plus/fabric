@@ -5,7 +5,7 @@
         <a slot="title">{{ item.title }}</a>
         <span slot="description">
           <span class="security-list-description">{{ item.description }}</span>
-          <span v-if="item.value"> : </span>
+          <span v-if="item.value">:</span>
           <span class="security-list-value">{{ item.value }}</span>
         </span>
       </a-list-item-meta>

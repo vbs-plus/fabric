@@ -1,8 +1,5 @@
 <template>
-  <div 
-    id="userLayout" 
-    :class="['user-layout-wrapper', isMobile && 'mobile']"
-  >
+  <div id="userLayout" :class="['user-layout-wrapper', isMobile && 'mobile']">
     <div class="container">
       <div class="user-layout-lang">
         <select-lang class="select-lang-trigger" />
@@ -11,11 +8,7 @@
         <div class="top">
           <div class="header">
             <a href="/">
-              <img 
-                src="~@/assets/logo.svg" 
-                class="logo" 
-                alt="logo"
-              >
+              <img src="~@/assets/logo.svg" class="logo" alt="logo" />
               <span class="title">Ant Design</span>
             </a>
           </div>

@@ -19,8 +19,7 @@
           :autoCropHeight="options.autoCropHeight"
           :fixedBox="options.fixedBox"
           @realTime="realTime"
-        >
-        </vue-cropper>
+        ></vue-cropper>
       </a-col>
       <a-col :xs="24" :md="12" :style="{ height: '350px' }">
         <div class="avatar-upload-preview">

@@ -6,7 +6,7 @@
           <a>风格配色</a>
         </template>
         <template #description>
-          <span> 整体风格配色设置 </span>
+          <span>整体风格配色设置</span>
         </template>
       </a-list-item-meta>
       <template #actions>
@@ -25,7 +25,8 @@
         </template>
         <template #description>
           <span>
-            页面风格配色： <a>{{ colorFilter(primaryColor) }}</a>
+            页面风格配色：
+            <a>{{ colorFilter(primaryColor) }}</a>
           </span>
         </template>
       </a-list-item-meta>

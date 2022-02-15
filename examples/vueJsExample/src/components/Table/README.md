@@ -21,8 +21,7 @@
     :columns="columns"
     :data="loadData"
     :rowSelection="{ selectedRowKeys: selectedRowKeys, onChange: onSelectChange }"
-  >
-  </s-table>
+  ></s-table>
 </template>
 
 <script>
@@ -98,7 +97,10 @@ export default {
       <a>编辑</a>
       <a-divider type="vertical" />
       <a-dropdown>
-        <a class="ant-dropdown-link"> 更多 <a-icon type="down" /> </a>
+        <a class="ant-dropdown-link">
+          更多
+          <a-icon type="down" />
+        </a>
         <a-menu slot="overlay">
           <a-menu-item>
             <a href="javascript:;">1st menu item</a>

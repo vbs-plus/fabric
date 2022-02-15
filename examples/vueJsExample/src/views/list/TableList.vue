@@ -58,11 +58,7 @@
                 :style="(advanced && { float: 'right', overflow: 'hidden' }) || {}"
               >
                 <a-button type="primary" @click="$refs.table.refresh(true)">查询</a-button>
-                <a-button
-                  style="margin-left: 8px"
-                  @click="() => (queryParam = {})"
-                >重置</a-button
-                >
+                <a-button style="margin-left: 8px" @click="() => (queryParam = {})">重置</a-button>
                 <a style="margin-left: 8px" @click="toggleAdvanced">
                   {{ advanced ? '收起' : '展开' }}
                   <a-icon :type="advanced ? 'up' : 'down'" />
@@ -77,11 +73,20 @@
         <a-button type="primary" icon="plus" @click="handleAdd">新建</a-button>
         <a-dropdown v-if="selectedRowKeys.length > 0" v-action:edit>
           <a-menu slot="overlay">
-            <a-menu-item key="1"><a-icon type="delete" />删除</a-menu-item>
+            <a-menu-item key="1">
+              <a-icon type="delete" />
+              删除
+            </a-menu-item>
             <!-- lock | unlock -->
-            <a-menu-item key="2"><a-icon type="lock" />锁定</a-menu-item>
+            <a-menu-item key="2">
+              <a-icon type="lock" />
+              锁定
+            </a-menu-item>
           </a-menu>
-          <a-button style="margin-left: 8px"> 批量操作 <a-icon type="down" /> </a-button>
+          <a-button style="margin-left: 8px">
+            批量操作
+            <a-icon type="down" />
+          </a-button>
         </a-dropdown>
       </div>
 
@@ -258,11 +263,11 @@ export default {
           console.log('values', values);
           if (values.id > 0) {
             // 修改 e.g.
-            new Promise((resolve, reject) => {
+            new Promise((resolve) => {
               setTimeout(() => {
                 resolve();
               }, 1000);
-            }).then((res) => {
+            }).then(() => {
               this.visible = false;
               this.confirmLoading = false;
               // 重置表单数据
@@ -274,11 +279,11 @@ export default {
             });
           } else {
             // 新增
-            new Promise((resolve, reject) => {
+            new Promise((resolve) => {
               setTimeout(() => {
                 resolve();
               }, 1000);
-            }).then((res) => {
+            }).then(() => {
               this.visible = false;
               this.confirmLoading = false;
               // 重置表单数据

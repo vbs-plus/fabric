@@ -105,10 +105,7 @@
                 tabindex="-1"
                 :disabled="state.smsSendBtn"
                 @click.stop.prevent="getCaptcha"
-                v-text="
-                  (!state.smsSendBtn && $t('user.register.get-verification-code')) ||
-                    state.time + ' s'
-                "
+                v-text="sendBtnText"
               ></a-button>
             </a-col>
           </a-row>
@@ -116,15 +113,16 @@
       </a-tabs>
 
       <a-form-item>
-        <a-checkbox v-decorator="['rememberMe', { valuePropName: 'checked' }]">{{
-          $t('user.login.remember-me')
-        }}</a-checkbox>
+        <a-checkbox v-decorator="['rememberMe', { valuePropName: 'checked' }]">
+          {{ $t('user.login.remember-me') }}
+        </a-checkbox>
         <router-link
           :to="{ name: 'recover', params: { user: 'aaa' } }"
           class="forge-password"
           style="float: right"
-        >{{ $t('user.login.forgot-password') }}</router-link
         >
+          {{ $t('user.login.forgot-password') }}
+        </router-link>
       </a-form-item>
 
       <a-form-item style="margin-top: 24px">
@@ -135,8 +133,9 @@
           class="login-button"
           :loading="state.loginBtn"
           :disabled="state.loginBtn"
-        >{{ $t('user.login.login') }}</a-button
         >
+          {{ $t('user.login.login') }}
+        </a-button>
       </a-form-item>
 
       <div class="user-login-other">
@@ -150,9 +149,9 @@
         <a>
           <a-icon class="item-icon" type="weibo-circle"></a-icon>
         </a>
-        <router-link class="register" :to="{ name: 'register' }">{{
-          $t('user.login.signup')
-        }}</router-link>
+        <router-link class="register" :to="{ name: 'register' }">
+          {{ $t('user.login.signup') }}
+        </router-link>
       </div>
     </a-form>
 
@@ -195,6 +194,11 @@ export default {
       },
     };
   },
+  computed: {
+    sendBtnText() {
+      return !this.state.smsSendBtn || this.state.time + ' s';
+    },
+  },
   created() {
     get2step({})
       .then((res) => {
@@ -205,6 +209,7 @@ export default {
       });
     // this.requiredTwoStepCaptcha = true
   },
+
   methods: {
     ...mapActions(['Login', 'Logout']),
     // handler
