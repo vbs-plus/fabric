@@ -1,43 +1,45 @@
 <!-- @format -->
 
-Language : 🇺🇸 | [🇨🇳](./README.zh-CN.md)
+Language : [🇺🇸](./README.md) | 🇨🇳
 
 # @vbs/fabric
 
-A collection of configuration files containing prettier, eslint, stylelint. It is based on [@umijs/fabric](https://github.com/umijs/fabric).
+一个包含 prettier，eslint，stylelint 的配置文件合集. 其基于[@umijs/fabric](https://github.com/umijs/fabric)。
 
-# Use
+# 使用教程
 
-## Support
-* [x] React + Typescript
-* [x] React + Javascript
-* [x] Vue + Typescript
-* [x] Vue + Javascript
-* [ ] Alipay Mini program
-* [ ] Wechat Mini program
-## Install
+## 支持
+
+- [x] React + Typescript
+- [x] React + Javascript
+- [x] Vue + Typescript
+- [x] Vue + Javascript
+- [ ] Alipay Mini program
+- [ ] Wechat Mini program
+
+## 安装
 
 ```bash
 npm i @vbs/fabric --save-dev
 yarn add @vbs/fabric -D
 ```
 
-In your project's root directory creating the configuration file shown below:
+在你的工程项目根目录下创建如下所示的配置文件:
 
-> - `.editorconfig`: a file format and collection of text editor plugins for maintaining consistent coding styles between different editors and IDEs.
-> - `.eslintignore`: a file to tell [ESLint](https://eslint.org/) to ignore specific files.
-> - `.eslintrc.js`: an object configuration file for [ESLint](https://eslint.org/).
-> - `.prettierignore`: a file to tell [prettier](https://prettier.io/) to ignore specific files.
-> - `.prettierrc.js`: an object configuration file for [prettier](https://prettier.io/).
-> - `.stylelintrc.js`: an object configuration file for [stylelint](https://stylelint.io/).
+> - `.editorconfig`: 用于保持不同编辑器及 IDE 的代码编写规范的格式化文本配置插件;
+> - `.eslintignore`: 用于指定[ESLint](https://eslint.org/)忽略特定文件的配置;
+> - `.eslintrc.js`: [ESLint](https://eslint.org/)的对象配置文件;
+> - `.prettierignore`: 用于指定[prettier](https://prettier.io/)忽略特定文件的配置;
+> - `.prettierrc.js`: [prettier](https://prettier.io/)的对象配置文件;
+> - `.stylelintrc.js`: [stylelint](https://stylelint.io/)的对象配置文件;
 
-## Configuration
+## 配置
 
-### Common Config
+### 通用配置
 
-The config examples:
+通用配置案例:
 
-in `.editorconfig`
+`.editorconfig`文件
 
 ```tex
 # http://editorconfig.org
@@ -58,7 +60,7 @@ trim_trailing_whitespace = false
 indent_style = tab
 ```
 
-in `.eslintignore`
+`.eslintignore`文件
 
 ```tex
 /lambda/
@@ -71,7 +73,7 @@ dist
 mock
 ```
 
-in `.prettierignore`
+`.prettierignore`文件
 
 ```tex
 **/*.svg
@@ -102,7 +104,7 @@ CNAME
 
 ### React
 
-in `.eslintrc.js`
+`.eslintrc.js`文件
 
 ```javascript
 module.exports = {
@@ -110,7 +112,7 @@ module.exports = {
 };
 ```
 
-in `.prettierrc.js`
+`.prettierrc.js`文件
 
 ```javascript
 const fabric = require('@vbs/fabric');
@@ -134,7 +136,7 @@ module.exports = {
 
 ### Vue
 
-in `.eslintrc.js`
+`.eslintrc.js`文件
 
 ```javascript
 module.exports = {
@@ -142,7 +144,7 @@ module.exports = {
 };
 ```
 
-in `.prettierrc.js`
+`.prettierrc.js`文件
 
 ```javascript
 const fabric = require('@vbs/fabric');
@@ -153,7 +155,7 @@ module.exports = {
 };
 ```
 
-in `.stylelintrc.js`
+`.stylelintrc.js`文件
 
 ```javascript
 const fabric = require('@vbs/fabric');
