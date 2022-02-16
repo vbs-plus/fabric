@@ -4,10 +4,14 @@ import { compare } from 'compare-versions';
 // import tsEslintConfig from './tsEslintConfig';
 
 const isVue3Project = ((packageJsonPath = 'package.json') => {
-  const json = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-  const vueVersion = json.dependencies.vue;
-  if (!vueVersion) return false;
-  return compare(vueVersion.replace(/(\~|\^)/gi, ''), '3.0.0', '>=');
+  try {
+    const json = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+    const vueVersion = json.dependencies.vue;
+    if (!vueVersion) return false;
+    return compare(vueVersion.replace(/(\~|\^)/gi, ''), '3.0.0', '>=');
+  } catch (error) {
+    return false;
+  }
 })();
 
 const isJsMoreTs = async (path = 'src') => {
